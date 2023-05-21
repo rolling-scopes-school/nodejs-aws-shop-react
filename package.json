@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "npm run build && vite preview",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "deploy": "npm install && npm run build && cd infra && npm install && npm run cdk-synth && npm run cdk-deploy"
+
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
