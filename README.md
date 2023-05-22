@@ -36,3 +36,16 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `build-infra`
+
+Builds CDK Stack
+
+### `deploy`
+
+Builds and deploys website, effectively `npm run build`, `npm run build-infra` and `cdk deploy`
+
+## App URLs
+
+* http://cdkfestack-myfirstbucketb8884501-1007v04jxv4aa.s3-website-us-east-1.amazonaws.com - responds with 403 due to bucket policies, use cloudfront distribution url instead
+* https://d1xaanpmmg0wvm.cloudfront.net - cloudfront distribution
