@@ -45,6 +45,7 @@ export default function PageOrder() {
         const res = await axios.get<AvailableProduct[]>(
           `${API_PATHS.bff}/product/available`
         );
+
         return res.data;
       },
     },
