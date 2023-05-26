@@ -15,24 +15,7 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 - [Prettier](https://prettier.io/) as a code formatting tool
 - [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
-## Available Scripts
+## Task 2
 
-### `start`
-
-Starts the project in dev mode with mocked API on local environment.
-
-### `build`
-
-Builds the project for production in `dist` folder.
-
-### `preview`
-
-Starts the project in production mode on local environment.
-
-### `test`, `test:ui`, `test:coverage`
-
-Runs tests in console, in browser or with coverage.
-
-### `lint`, `prettier`
-
-Runs linting and formatting for all files in `src` folder.
+- [CloudFront URL](https://dj8ptqeeoylnt.cloudfront.net/) - enabled
+- [S3-website](?) - forbidden
