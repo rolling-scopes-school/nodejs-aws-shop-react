@@ -10,21 +10,29 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk:deploy": "cdk deploy --require-approval never",
+    "cdk:destroy": "cdk destroy --force",
+    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:synth": "cdk synth"
   },
   "dependencies": {
+    "@aws-cdk/aws-s3": "^1.202.0",
+    "@aws-cdk/aws-s3-deployment": "^1.202.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
     "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
+    "aws-cdk-lib": "^2.81.0",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
+    "ts-node": "^10.9.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {
