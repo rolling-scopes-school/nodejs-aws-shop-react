@@ -5,6 +5,8 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
+    "build:cdk:bootstrap": "npm run build && npm run cdk:bootstrap",
+    "build:cloudfront:deploy": "npm run build && npm run cloudfront:deploy",
     "cdk:bootstrap": "npx cdk bootstrap",
     "cloudfront:deploy": "npx cdk deploy",
     "cloudfront:remove": "npx cdk destroy",
