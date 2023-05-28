@@ -8,6 +8,8 @@
     "preview": "npm run build && vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
+    "aws-deploy": "cd cdk && cdk deploy",
+    "aws-delete": "cd cdk && cdk destroy",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write"
