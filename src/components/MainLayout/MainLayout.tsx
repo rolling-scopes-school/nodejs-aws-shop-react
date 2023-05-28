@@ -13,7 +13,7 @@ function Copyright() {
         My Store
       </Link>{" "}
       {new Date().getFullYear()}
-      {"."}
+      {". AWS CDK scripts by @code-by, 2023"}
     </Typography>
   );
 }
