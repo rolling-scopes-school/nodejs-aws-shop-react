@@ -2,7 +2,6 @@ import * as cdk from "aws-cdk-lib";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import * as deployment from "aws-cdk-lib/aws-s3-deployment";
 import * as cf from "aws-cdk-lib/aws-cloudfront";
-import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 
 const app = new cdk.App();
 
@@ -12,6 +11,9 @@ const stack = new cdk.Stack(app, "ReactReduxCloudStack-vuk", {
 
 const bucket = new s3.Bucket(stack, "WebAppBucket", {
   bucketName: "rs-aws-app-vuk",
+  websiteIndexDocument: "index.html",
+  publicReadAccess: false,
+  blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
 });
 
 const originAccessIdentity = new cf.OriginAccessIdentity(
@@ -24,22 +26,30 @@ const originAccessIdentity = new cf.OriginAccessIdentity(
 
 bucket.grantRead(originAccessIdentity);
 
-const cloudFront = new cf.Distribution(stack, "WebAppDistribution", {
-  defaultBehavior: {
-    origin: new origins.S3Origin(bucket, {
-      originAccessIdentity,
-    }),
+const cloudFront = new cf.CloudFrontWebDistribution(
+  stack,
+  "WebAppDistribution",
+  {
+    originConfigs: [
+      {
+        s3OriginSource: {
+          s3BucketSource: bucket,
+          originAccessIdentity: originAccessIdentity,
+        },
+        behaviors: [{ isDefaultBehavior: true }],
+      },
+    ],
     viewerProtocolPolicy: cf.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-  },
-  defaultRootObject: "index.html",
-  errorResponses: [
-    {
-      httpStatus: 404,
-      responseHttpStatus: 200,
-      responsePagePath: "/index.html",
-    },
-  ],
-});
+    defaultRootObject: "index.html",
+    errorConfigurations: [
+      {
+        errorCode: 404,
+        responseCode: 200,
+        responsePagePath: "/index.html",
+      },
+    ],
+  }
+);
 
 new deployment.BucketDeployment(stack, "DeployWebApp", {
   destinationBucket: bucket,
