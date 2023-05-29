@@ -36,3 +36,11 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### S3 Static Site URL (manual deployment)
+
+http://annabusko-nodejs-aws-shop-react.s3-website.us-east-2.amazonaws.com/
+
+
+### CloudFront link
+https://d34cevj9xd7x0f.cloudfront.net/
