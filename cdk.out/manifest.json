@@ -1,0 +1,621 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "MyJSCCStaticWebsite": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "MyJSCCStaticWebsite.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/MyJSCCStaticWebsite": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.d239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5b.zip",
+              "id": "d239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5b",
+              "packaging": "file",
+              "sourceHash": "d239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5b",
+              "s3BucketParameter": "AssetParametersd239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5bS3Bucket2C6BA582",
+              "s3KeyParameter": "AssetParametersd239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5bS3VersionKey3BF8AE51",
+              "artifactHashParameter": "AssetParametersd239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5bArtifactHashCFD7F3C4"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/construct-compat.js:416:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:202:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new LayerVersion (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
+              "new AwsCliLayer (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da",
+              "id": "f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da",
+              "packaging": "zip",
+              "sourceHash": "f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da",
+              "s3BucketParameter": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3BucketF23C0DE7",
+              "s3KeyParameter": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3VersionKey5E97B17D",
+              "artifactHashParameter": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daArtifactHashD85D28D8"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/construct-compat.js:416:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:202:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "SingletonFunction.ensureLambda (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
+              "new SingletonFunction (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.e3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8",
+              "id": "e3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8",
+              "packaging": "zip",
+              "sourceHash": "e3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8",
+              "s3BucketParameter": "AssetParameterse3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8S3BucketE99C870E",
+              "s3KeyParameter": "AssetParameterse3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8S3VersionKeyBBFCE65D",
+              "artifactHashParameter": "AssetParameterse3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8ArtifactHash22796E86"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/construct-compat.js:416:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:202:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "Object.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/source.js:62:31)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/JSCCStaticWebsite/JSCCS-OAI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "JSCCStaticWebsiteJSCCSOAI871D176A",
+            "trace": [
+              "new OriginAccessIdentity (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.js:45:25)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:13:31)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/JSCCStaticWebsite/JSCCStaticBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "JSCCStaticWebsiteJSCCStaticBucket81DADFF5",
+            "trace": [
+              "new Bucket (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3/lib/bucket.js:666:26)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:14:28)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/JSCCStaticWebsite/JSCCStaticBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "JSCCStaticWebsiteJSCCStaticBucketPolicy2E2CDB45",
+            "trace": [
+              "new BucketPolicy (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3/lib/bucket-policy.js:45:25)",
+              "Bucket.addToResourcePolicy (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3/lib/bucket.js:169:27)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:20:20)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/JSCCStaticWebsite/JSCCS-distribution/CFDistribution": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "JSCCStaticWebsiteJSCCSdistributionCFDistribution3C41E409",
+            "trace": [
+              "new CloudFrontWebDistribution (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-cloudfront/lib/web-distribution.js:326:30)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:25:30)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/JSCCStaticWebsite/JSCCS-Bucket-deployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "JSCCStaticWebsiteJSCCSBucketdeploymentAwsCliLayerEDC52F1C",
+            "trace": [
+              "new LayerVersion (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/layers.js:54:26)",
+              "new AwsCliLayer (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/JSCCStaticWebsite/JSCCS-Bucket-deployment/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "JSCCStaticWebsiteJSCCSBucketdeploymentCustomResource052C43AA",
+            "trace": [
+              "new CustomResource (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/custom-resource.js:49:25)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:117:19)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/d239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5b/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5bS3Bucket2C6BA582",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new LayerVersion (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
+              "new AwsCliLayer (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/d239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5b/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5bS3VersionKey3BF8AE51",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new LayerVersion (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
+              "new AwsCliLayer (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/d239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5b/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersd239e44411f232659ddaaba440db903153fce7e504182dfb3ee2a70a03897d5bArtifactHashCFD7F3C4",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new LayerVersion (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/layers.js:47:33)",
+              "new AwsCliLayer (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.js:14:9)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:81:22)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3BucketF23C0DE7",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "SingletonFunction.ensureLambda (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
+              "new SingletonFunction (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3VersionKey5E97B17D",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "SingletonFunction.ensureLambda (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
+              "new SingletonFunction (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daArtifactHashD85D28D8",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "AssetCode.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/code.js:277:26)",
+              "new Function (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/function.js:114:33)",
+              "SingletonFunction.ensureLambda (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
+              "new SingletonFunction (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/e3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8S3BucketE99C870E",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "Object.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/source.js:62:31)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/e3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8S3VersionKeyBBFCE65D",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "Object.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/source.js:62:31)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/AssetParameters/e3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse3d631a370b611bf530a3f13d0017fd32b826b0af9e3db0b190edcddcb9a97d8ArtifactHash22796E86",
+            "trace": [
+              "new FileAssetParameters (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:189:22)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:98:25)",
+              "MyStaticSiteStack.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack.js:473:33)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:59",
+              "withoutDeprecationWarnings (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:229:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:103:20)",
+              "new Asset (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:46:44)",
+              "Object.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/source.js:62:31)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "trace": [
+              "new Role (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-iam/lib/role.js:63:22)",
+              "new Function (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/function.js:97:35)",
+              "SingletonFunction.ensureLambda (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
+              "new SingletonFunction (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+            "trace": [
+              "new Policy (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-iam/lib/policy.js:57:26)",
+              "Role.addToPrincipalPolicy (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-iam/lib/role.js:247:34)",
+              "Grant.addToPrincipal (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-iam/lib/grant.js:102:65)",
+              "Grant.addToPrincipalOrResource (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-iam/lib/grant.js:50:30)",
+              "Import.grant (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3/lib/bucket.js:487:31)",
+              "Import.grantRead (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3/lib/bucket.js:302:21)",
+              "Asset.grantRead (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:99:21)",
+              "Object.bind (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/source.js:69:23)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:62",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:101:39)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "trace": [
+              "new Function (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/function.js:172:26)",
+              "SingletonFunction.ensureLambda (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:164:16)",
+              "new SingletonFunction (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.js:32:36)",
+              "new BucketDeployment (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.js:78:25)",
+              "new StaticSite (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/static-site.js:34:9)",
+              "new MyStaticSiteStack (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:9:9)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:13:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
+              "visit (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stage.js:104:41)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:14:5)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyJSCCStaticWebsite/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:139:9",
+              "visit (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:200:9)",
+              "visit (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:197:9)",
+              "injectMetadataResources (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:128:5)",
+              "Object.synthesize (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/private/synthesis.js:17:5)",
+              "App.synth (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/node_modules/@aws-cdk/core/lib/stage.js:104:41)",
+              "Object.<anonymous> (/Users/sardorboboshov/rs-aws/nodejs-aws-shop-react/index.js:14:5)",
+              "Module._compile (node:internal/modules/cjs/loader:1254:14)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1308:10)",
+              "Module.load (node:internal/modules/cjs/loader:1117:32)",
+              "Module._load (node:internal/modules/cjs/loader:958:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ]
+      },
+      "displayName": "MyJSCCStaticWebsite"
+    }
+  }
+}
