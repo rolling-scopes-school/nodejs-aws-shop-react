@@ -14,7 +14,8 @@
     "prettier": "prettier src --write",
     "cdk:bootstrap": "npx cdk bootstrap",
     "cloudfront:setup": "cdk deploy",
-    "cloudfront:remove": "cdk destroy"
+    "cloudfront:remove": "cdk destroy",
+    "cloudfront:update": "npm run build && cdk deploy"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
