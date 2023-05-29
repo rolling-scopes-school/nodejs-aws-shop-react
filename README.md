@@ -36,3 +36,9 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## Links
+
+### [Cloudfront](d1ipo9cpn8w70i.cloudfront.net)
+
+### [S3 Bucket](https://antontrafimovich-nodejs-aws-shop-react.s3.eu-north-1.amazonaws.com/)
