@@ -20,6 +20,8 @@ export class InfraStack extends cdk.Stack {
       'nodejs-aws-shop-react-s3-automated-private',
       {
         accessControl: s3.BucketAccessControl.PRIVATE,
+        removalPolicy: cdk.RemovalPolicy.DESTROY,
+        autoDeleteObjects: true,
       }
     );
 
