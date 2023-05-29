@@ -20,10 +20,6 @@
     "typescript": "~5.0.4"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudfront": "^1.202.0",
-    "@aws-cdk/aws-cloudfront-origins": "^1.202.0",
-    "@aws-cdk/aws-s3": "^1.202.0",
-    "@aws-cdk/aws-s3-deployment": "^1.202.0",
     "aws-cdk-lib": "2.81.0",
     "constructs": "^10.0.0",
     "install": "^0.13.0",
