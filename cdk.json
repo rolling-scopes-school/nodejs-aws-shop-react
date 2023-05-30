@@ -1,0 +1,3 @@
+{
+  "app": "npx ts-node --project=tsconfig.cdk.json cdk.ts"
+}
