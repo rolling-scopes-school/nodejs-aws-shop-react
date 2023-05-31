@@ -1,0 +1,4 @@
+{
+  "app": "node ./cdk/init-deploy",
+  "profile": "default"
+}
