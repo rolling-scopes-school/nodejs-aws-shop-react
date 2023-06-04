@@ -6,20 +6,20 @@ import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 
 const app = new cdk.App();
 
-const stack = new cdk.Stack(app, 'AntontrafimovichNodejsAwsShopReactStack', {
+const stack = new cdk.Stack(app, 'ShopFrontendStack', {
     env: { region: 'eu-north-1' }
 });
 
-const bucket = new s3.Bucket(stack, 'AntontrafimovichNodejsAwsShopReactBucket', {
-    bucketName: "antontrafimovich-nodejs-aws-shop-react"
+const bucket = new s3.Bucket(stack, 'ShopBucket', {
+    bucketName: "at-shop-bucket"
 });
 
-const originAccessIdentity = new cf.OriginAccessIdentity(stack, 'AntontrafimovichNodejsAwsShopReactOAI', {
+const originAccessIdentity = new cf.OriginAccessIdentity(stack, 'ATShopFrontendOAI', {
     comment: bucket.bucketName
 });
 bucket.grantRead(originAccessIdentity);
 
-const cloudfront = new cf.Distribution(stack, 'AntontrafimovichNodejsAwsShopReactDisctribution', {
+const cloudfront = new cf.Distribution(stack, 'ATShopFrontendDistribution', {
     defaultBehavior: {
         origin: new origins.S3Origin(bucket, {
             originAccessIdentity
@@ -36,7 +36,7 @@ const cloudfront = new cf.Distribution(stack, 'AntontrafimovichNodejsAwsShopReac
     ]
 })
 
-new deployment.BucketDeployment(stack, 'AntontrafimovichNodejsAwsShopReactDeployment', {
+new deployment.BucketDeployment(stack, 'ATShopFrontendDeployment', {
     destinationBucket: bucket,
     distribution: cloudfront,
     sources: [deployment.Source.asset('./dist')],
