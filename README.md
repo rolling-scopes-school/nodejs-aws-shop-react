@@ -1,5 +1,13 @@
 # React-shop-cloudfront
 
+## Task-2 links
+
+- [CloudFront website](https://dgaojw28dgevx.cloudfront.net)
+- [S3 bucket](https://skreepatch-cloudfront-s3.s3.amazonaws.com/index.html) (Access denied because of CloudFront but available)
+
+
+## Other links
+
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
@@ -36,3 +44,11 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `bootstrap`
+
+cdk bootstrap
+
+### `build-and-deploy`
+
+Build and deploy to aws
