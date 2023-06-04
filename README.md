@@ -15,6 +15,12 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 - [Prettier](https://prettier.io/) as a code formatting tool
 - [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
+## Links to deployments
+
+Cloudfront: https://dh512t9i782ya.cloudfront.net/
+
+S3(with Access denied): https://rs-nodejs-aws-shop.s3.eu-west-1.amazonaws.com/index.html 
+
 ## Available Scripts
 
 ### `start`
@@ -36,3 +42,16 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `cdk:bootstrap`
+
+Provides resources for the AWS CDK before you can deploy AWS CDK apps into an AWS environment. Run it once
+
+### `cdk:deploy`
+
+Deploys one or more specified stacks
+
+### `cdk:destroy`
+
+Destroys one or more specified stacks
+
