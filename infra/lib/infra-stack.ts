@@ -15,30 +15,30 @@ export class InfraStack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
-    const bucket = new s3.Bucket(
+    const bucket = new s3.Bucket(this, 'FrontEndAppBucket', {
+      accessControl: s3.BucketAccessControl.PRIVATE,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+    });
+
+    new aws_s3_deployment.BucketDeployment(
       this,
-      'nodejs-aws-shop-react-s3-automated-private',
+      'FrontEndAppBucketDeployment',
       {
-        accessControl: s3.BucketAccessControl.PRIVATE,
-        removalPolicy: cdk.RemovalPolicy.DESTROY,
-        autoDeleteObjects: true,
+        destinationBucket: bucket,
+        sources: [
+          aws_s3_deployment.Source.asset(path.join(__dirname, '../../dist')),
+        ],
       }
     );
 
-    new aws_s3_deployment.BucketDeployment(this, 'BucketDeployment', {
-      destinationBucket: bucket,
-      sources: [
-        aws_s3_deployment.Source.asset(path.join(__dirname, '../../dist')),
-      ],
-    });
-
     const originAccessIdentity = new aws_cloudfront.OriginAccessIdentity(
       this,
-      'OriginAccessIdentity'
+      'FrontEndAppOriginAccessIdentity'
     );
     bucket.grantRead(originAccessIdentity);
 
-    new aws_cloudfront.Distribution(this, 'Distribution', {
+    new aws_cloudfront.Distribution(this, 'FrontEndReactShopAppDistribution', {
       defaultRootObject: 'index.html',
       defaultBehavior: {
         origin: new aws_cloudfront_origins.S3Origin(bucket, {
