@@ -36,3 +36,12 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `build-deploy`
+
+Runs build for production, deploy production content into S3 bucket, creating CloudFront distribution.
+
+### AWS links
+
+- S3: http://rs-cd-reactshop-20230526.s3-website-eu-west-1.amazonaws.com
+- CF: https://dujos7rix59g6.cloudfront.net
