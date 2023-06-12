@@ -12,8 +12,9 @@
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
+    "cdk:bootstrap": "cdk bootstrap",
     "cdk:deploy": "cdk deploy",
-    "cdk:bootstrap": "cdk bootstrap"
+    "deploy": "npm run build && npm run cdk:deploy"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",

@@ -9,9 +9,9 @@ import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
 import { useAvailableProducts } from "~/queries/products";
 
 export default function Products() {
-  const { data = [], isLoading } = useAvailableProducts();
+  const { data, isLoading } = useAvailableProducts();
 
-  if (isLoading) {
+  if (!data || isLoading) {
     return <Typography>Loading...</Typography>;
   }
 
