@@ -9,7 +9,7 @@ type CSVFileImportProps = {
 };
 
 export default function CSVFileImport({ url, title }: CSVFileImportProps) {
-  const [file, setFile] = React.useState<File>();
+  const [file, setFile] = React.useState<File | null>(null);
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -20,7 +20,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
   };
 
   const removeFile = () => {
-    setFile(undefined);
+    setFile(null);
   };
 
   const uploadFile = async () => {
@@ -31,7 +31,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       method: "GET",
       url,
       params: {
-        name: encodeURIComponent(file?.name),
+        name: encodeURIComponent(file?.name as string),
       },
     });
     console.log("File to upload: ", file?.name);
@@ -41,7 +41,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       body: file,
     });
     console.log("Result: ", result);
-    setFile("");
+    setFile(null);
   };
   return (
     <Box>
