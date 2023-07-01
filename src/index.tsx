@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 import { createRoot } from "react-dom/client";
 import App from "~/components/App/App";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -18,6 +20,17 @@ if (import.meta.env.DEV) {
   const { worker } = await import("./mocks/browser");
   worker.start({ onUnhandledRequest: "bypass" });
 }
+
+axios.interceptors.response.use(
+  (x) => x,
+  (x) => {
+    console.log({ rej: x });
+    if (x.response.status === 401 || x.response.status === 403) {
+      Swal.fire("Unauthorized", x.response.statusText, "error");
+    }
+    throw x;
+  }
+);
 
 const container = document.getElementById("app");
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
