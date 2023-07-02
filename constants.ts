@@ -3,7 +3,7 @@ const APP_NAME = "shop-react-cloudfront";
 
 export const STACK_NAME = `${COURSE_NAME}-${APP_NAME}-stack`;
 export const BUCKET_NAME = `${COURSE_NAME}-${APP_NAME}-bucket`;
-export const DEFAULT_REGION = "eu-west-1";
+export const DEFAULT_REGION = "eu-north-1";
 
 export const BUILD_FOLDER_PATH = "./dist";
 export const ENTRY_POINT = "index.html";

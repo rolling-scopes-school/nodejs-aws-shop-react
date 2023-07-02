@@ -17,5 +17,5 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 
 ## Task 2
 
-- [CloudFront URL](https://d3qsos8yot5mxs.cloudfront.net) - enabled
-- [S3-website](http://aws-developer-shop-react-cloudfront-bucket.s3-website-eu-west-1.amazonaws.com) - forbidden
+- [CloudFront URL](https://d1qhaa2cut6jyu.cloudfront.net) - enabled
+- [S3-website](http://aws-developer-shop-react-cloudfront-bucket.s3-website.eu-north-1.amazonaws.com) - forbidden
