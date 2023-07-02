@@ -36,7 +36,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
         }
       };
       if(token) {
-        requestParams.headers = { Authorization: `Basic ${token}`};
+        requestParams.headers = requestParams.headers ? {...requestParams.headers, Authorization: `Basic ${token}`} : {Authorization: `Basic ${token}`};
       }
 
       const response = await axios(requestParams);
