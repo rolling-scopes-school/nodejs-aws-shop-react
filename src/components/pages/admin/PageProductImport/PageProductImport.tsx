@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 
-export default function PageProductImport() {
+export default function PageProductImport({ isTokenReady }: { isTokenReady: boolean}) {
   return (
     <Box py={3}>
       <Box mb={2} display="flex" justifyContent="space-between">
@@ -24,7 +24,7 @@ export default function PageProductImport() {
           Create product
         </Button>
       </Box>
-      <ProductsTable />
+      <ProductsTable isTokenReady={isTokenReady} />
     </Box>
   );
 }

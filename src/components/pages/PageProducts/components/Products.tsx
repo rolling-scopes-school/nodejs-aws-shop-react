@@ -7,9 +7,14 @@ import Typography from "@mui/material/Typography";
 import { formatAsPrice } from "~/utils/utils";
 import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
 import { useAvailableProducts } from "~/queries/products";
+import { AvailableProduct } from "~/models/Product";
 
-export default function Products() {
-  const { data = [], isLoading } = useAvailableProducts();
+export default function Products({ isTokenReady }: { isTokenReady: boolean}) {
+  const { data = [], isLoading } = useAvailableProducts(isTokenReady);
+
+  if (!isTokenReady) {
+    return <Typography>Waiting for token...</Typography>;
+  }
 
   if (isLoading) {
     return <Typography>Loading...</Typography>;
