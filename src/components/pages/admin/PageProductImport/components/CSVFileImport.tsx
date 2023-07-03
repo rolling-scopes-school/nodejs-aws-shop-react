@@ -30,6 +30,10 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
     const response = await axios({
       method: "GET",
       url,
+      auth: {
+        username: import.meta.env.VITE_GITHUB_LOGIN,
+        password: import.meta.env.VITE_PASSWORD,
+      },
       params: {
         name: encodeURIComponent(file?.name as string),
       },
