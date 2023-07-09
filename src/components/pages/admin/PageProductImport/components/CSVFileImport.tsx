@@ -31,13 +31,29 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       return;
     }
 
+    const authorization_token = localStorage.getItem("authorization_token");
+
     // Get the presigned URL
+
     const response = await axios({
       method: "GET",
       url,
       params: {
         name: encodeURIComponent(file.name),
       },
+      headers: {
+        Authorization: `Basic ${authorization_token}`,
+      },
+    }).catch((error) => {
+      const status = error.response.status;
+      if (status === 401) {
+        alert("401 Authorization header is not provided");
+      } else if (status === 403) {
+        alert(
+          "403 access is denied for this user (invalid authorization_token)"
+        );
+      }
+      return error;
     });
 
     const presignedUrl = new URL(response.data);
