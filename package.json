@@ -16,8 +16,8 @@
     "prettier": "prettier src --write",
     "cdk": "cdk",
     "cdk:bootstrap": "npx cdk bootstrap",
-    "cdk:deploy": "npx cdk deploy",
-    "cdk:destroy": "npx cdk destroy"
+    "cdk:deploy": "npx cdk deploy --profile yanaadmin",
+    "cdk:destroy": "npx cdk destroy --profile yanaadmin"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
