@@ -13,6 +13,9 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  build: {
+    sourcemap: true, // Enable source map generation
+  },
   test: {
     globals: true,
     environment: "jsdom",

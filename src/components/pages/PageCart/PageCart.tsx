@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 import { useCart, useInvalidateCart } from "~/queries/cart";
 import AddressForm from "~/components/pages/PageCart/components/AddressForm";
 import { useSubmitOrder } from "~/queries/orders";
+import { CartItem, DataReturn } from "~/models/CartItem";
 
 enum CartStep {
   ReviewCart,
@@ -25,6 +26,12 @@ const initialAddressValues = AddressSchema.cast({});
 const CartIsEmpty = () => (
   <Typography variant="h6" gutterBottom>
     The cart is empty. Didn&apos;t you like anything in our shop?
+  </Typography>
+);
+
+const CartIsLoading = () => (
+  <Typography variant="h6" gutterBottom>
+    The cart is loading. Please wait...
   </Typography>
 );
 
@@ -43,29 +50,40 @@ const Success = () => (
 const steps = ["Review your cart", "Shipping address", "Review your order"];
 
 export default function PageCart() {
-  const { data = [] } = useCart();
+  const { data = {} as DataReturn, isFetching } = useCart();
   const { mutate: submitOrder } = useSubmitOrder();
   const invalidateCart = useInvalidateCart();
   const [activeStep, setActiveStep] = React.useState<CartStep>(
     CartStep.ReviewCart
   );
+  const [itemsCurrent, setItemsCurrent] = React.useState<CartItem[]>([]);
   const [address, setAddress] = useState<Address>(initialAddressValues);
 
-  const isCartEmpty = data.length === 0;
+  useEffect(() => {
+    if(!isFetching) {
+      setItemsCurrent(data.cart ? data.cart.items : [])
+    }
+  }, [isFetching])
+
+  const isCartEmpty = () => {
+    return itemsCurrent.length === 0;
+  }
 
   const handleNext = () => {
     if (activeStep !== CartStep.ReviewOrder) {
       setActiveStep((step) => step + 1);
       return;
     }
+
     const values = {
-      items: data.map((i) => ({
+      items: itemsCurrent.map((i) => ({
         productId: i.product.id,
         count: i.count,
       })),
       address,
     };
 
+    console.log('submitOrder',values)
     submitOrder(values as Omit<Order, "id">, {
       onSuccess: () => {
         setActiveStep(activeStep + 1);
@@ -98,9 +116,10 @@ export default function PageCart() {
           </Step>
         ))}
       </Stepper>
-      {isCartEmpty && <CartIsEmpty />}
-      {!isCartEmpty && activeStep === CartStep.ReviewCart && (
-        <ReviewCart items={data} />
+      {isFetching && <CartIsLoading />}
+      {!isFetching && isCartEmpty() && <CartIsEmpty />}
+      {!isFetching && !isCartEmpty() && activeStep === CartStep.ReviewCart && (
+        <ReviewCart items={data?.cart.items} />
       )}
       {activeStep === CartStep.Address && (
         <AddressForm
@@ -110,10 +129,10 @@ export default function PageCart() {
         />
       )}
       {activeStep === CartStep.ReviewOrder && (
-        <ReviewOrder address={address} items={data} />
+        <ReviewOrder address={address} items={data?.cart.items} />
       )}
       {activeStep === CartStep.Success && <Success />}
-      {!isCartEmpty &&
+      {!isFetching && !isCartEmpty() &&
         activeStep !== CartStep.Address &&
         activeStep !== CartStep.Success && (
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>

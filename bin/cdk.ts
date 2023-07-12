@@ -7,7 +7,7 @@ import * as customResources from 'aws-cdk-lib/custom-resources';
 
 const app = new cdk.App();
 
-const stack = new cdk.Stack(app, 'ShopReactStack', {
+const stack = new cdk.Stack(app, 'ShopReactFrontStack', {
   env: { region: 'eu-west-1' }
 });
 

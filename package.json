@@ -15,7 +15,7 @@
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
     "cdk": "cdk",
-    "cdk:bootstrap": "npx cdk bootstrap",
+    "cdk:bootstrap": "npx cdk bootstrap --profile yanaadmin",
     "cdk:deploy": "npx cdk deploy --profile yanaadmin",
     "cdk:destroy": "npx cdk destroy --profile yanaadmin"
   },

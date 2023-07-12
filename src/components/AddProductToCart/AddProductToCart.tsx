@@ -5,16 +5,18 @@ import Add from "@mui/icons-material/Add";
 import Remove from "@mui/icons-material/Remove";
 import IconButton from "@mui/material/IconButton";
 import { useCart, useInvalidateCart, useUpsertCart } from "~/queries/cart";
+import { DataReturn } from "~/models/CartItem";
 
 type AddProductToCartProps = {
   product: Product;
 };
 
 export default function AddProductToCart({ product }: AddProductToCartProps) {
-  const { data = [], isFetching } = useCart();
+  const { data = {} as DataReturn, isFetching } = useCart();
   const { mutate: upsertCart } = useUpsertCart();
   const invalidateCart = useInvalidateCart();
-  const cartItem = data.find((i) => i.product.id === product.id);
+
+  const cartItem = data.cart ? data.cart.items.find((i: any) => i.product.id === product.id) : undefined;
 
   const addProduct = () => {
     upsertCart(
