@@ -5,10 +5,19 @@ import API_PATHS from "~/constants/apiPaths";
 import { OrderStatus } from "~/constants/order";
 import { Order } from "~/models/Order";
 
+interface ResponseOreder<T> {
+  statusCode: number;
+  message: string;
+  data: T;
+}
 export function useOrders() {
-  return useQuery<Order[], AxiosError>("orders", async () => {
-    const res = await axios.get<Order[]>(`${API_PATHS.order}/order`);
-    return res.data;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return useQuery<ResponseOreder<Order[]>, AxiosError>("orders", async () => {
+    const res = await axios.get<ResponseOreder<Order[]>>(
+      `${API_PATHS.order}/order`
+    );
+    return res.data.data;
   });
 }
 

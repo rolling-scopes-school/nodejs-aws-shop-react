@@ -4,13 +4,14 @@ const BASE_PATH =
 const IMPORT_PATH =
   "https://owxgrms5fl.execute-api.eu-west-1.amazonaws.com/prod/";
 
-const CART_PATH = "http://localhost:4000/api";
+const CART_PATH =
+  " https://wolxk0qmh1.execute-api.eu-west-1.amazonaws.com/prod/api";
 
 const API_PATHS = {
   product: BASE_PATH + "products",
-  order: "https://.execute-api.eu-west-1.amazonaws.com/dev",
+  order: CART_PATH,
   import: IMPORT_PATH + "import",
-  bff: "https://.execute-api.eu-west-1.amazonaws.com/dev",
+  bff: BASE_PATH + "products",
   cart: CART_PATH,
 };
 

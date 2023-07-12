@@ -9,7 +9,7 @@ import ReviewOrder from "~/components/pages/PageCart/components/ReviewOrder";
 import PaperLayout from "~/components/PaperLayout/PaperLayout";
 import { Address, AddressSchema, Order } from "~/models/Order";
 import Box from "@mui/material/Box";
-import { useCart, useInvalidateCart } from "~/queries/cart";
+import { useCart, useCheckout, useInvalidateCart } from "~/queries/cart";
 import AddressForm from "~/components/pages/PageCart/components/AddressForm";
 import { useSubmitOrder } from "~/queries/orders";
 
@@ -44,7 +44,8 @@ const steps = ["Review your cart", "Shipping address", "Review your order"];
 
 export default function PageCart() {
   const { data = [] } = useCart();
-  const { mutate: submitOrder } = useSubmitOrder();
+  // const { mutate: submitOrder } = useSubmitOrder();
+  const { mutate: submitOrder } = useCheckout();
   const invalidateCart = useInvalidateCart();
   const [activeStep, setActiveStep] = React.useState<CartStep>(
     CartStep.ReviewCart
@@ -58,15 +59,17 @@ export default function PageCart() {
       setActiveStep((step) => step + 1);
       return;
     }
+    console.log({ data });
     const values = {
       items: data.map((i) => ({
-        productId: i.product.id,
+        productId: i.product_id,
         count: i.count,
       })),
       address,
+      cart_id: data[0].cart_id,
     };
-
-    submitOrder(values as Omit<Order, "id">, {
+    console.log({ values, data });
+    submitOrder(values as unknown as Omit<Order, "id" | "cart_id">, {
       onSuccess: () => {
         setActiveStep(activeStep + 1);
         invalidateCart();

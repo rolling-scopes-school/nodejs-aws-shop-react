@@ -3,6 +3,7 @@ import React from "react";
 import { useQuery, useQueryClient, useMutation } from "react-query";
 import API_PATHS from "~/constants/apiPaths";
 import { CartItem } from "~/models/CartItem";
+import { Order } from "~/models/Order";
 
 interface CartResponse {
   statsCode: number;
@@ -46,6 +47,16 @@ export function useInvalidateCart() {
 export function useUpsertCart() {
   return useMutation((values: CartItem) =>
     axios.put<CartItem[]>(`${API_PATHS.cart}/profile/cart`, values, {
+      headers: {
+        Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+      },
+    })
+  );
+}
+
+export function useCheckout() {
+  return useMutation((values: Omit<Order, "id">) =>
+    axios.post(`${API_PATHS.cart}/profile/cart/checkout`, values, {
       headers: {
         Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
       },
