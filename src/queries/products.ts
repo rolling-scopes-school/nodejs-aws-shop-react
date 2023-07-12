@@ -4,26 +4,15 @@ import { AvailableProduct } from "~/models/Product";
 import { useQuery, useQueryClient, useMutation } from "react-query";
 import React from "react";
 
-export function useAvailableProducts(isTokenReady: boolean) {
+export function useAvailableProducts() {
   return useQuery<AvailableProduct[], AxiosError>(
     "available-products",
     async () => {
-      const idToken = localStorage.getItem('id_token');
-
-      if (!idToken) {
-        throw new Error('Authorization token not found');
-      }
-
       const res = await axios.get<AvailableProduct[]>(
-        `${API_PATHS.bff}/products`, {
-          headers: {
-            Authorization: `Bearer ${idToken}`,
-          },
-        }
+        `${API_PATHS.bff}/products`
       );
       return res.data;
-    },
-    { enabled: isTokenReady }
+    }
   );
 }
 

@@ -14,8 +14,8 @@ import {
   useInvalidateAvailableProducts,
 } from "~/queries/products";
 
-export default function ProductsTable({ isTokenReady }: { isTokenReady: boolean}) {
-  const { data = [] } = useAvailableProducts(isTokenReady);
+export default function ProductsTable() {
+  const { data = [] } = useAvailableProducts();
   const { mutate: deleteAvailableProduct } = useDeleteAvailableProduct();
   const invalidateAvailableProducts = useInvalidateAvailableProducts();
 
