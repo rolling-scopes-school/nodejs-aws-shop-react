@@ -6,12 +6,16 @@ import { CartItem } from "~/models/CartItem";
 
 export function useCart() {
   return useQuery<CartItem[], AxiosError>("cart", async () => {
-    const res = await axios.get<CartItem[]>(`${API_PATHS.cart}/profile/cart`, {
+    const res = await axios.get<{
+      cart: {
+        items: CartItem[];
+      };
+    }>(`${API_PATHS.cart}/profile/cart`, {
       headers: {
         Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
       },
     });
-    return res.data;
+    return res.data.cart.items;
   });
 }
 
