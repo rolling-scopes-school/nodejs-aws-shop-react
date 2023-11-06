@@ -35,6 +35,8 @@ Available NPM Scripts
 
 * `cdk:deploy` - Runs AWS CDK deploy command to deploy stack
 
+* `cdk:destroy` - Runs AWS CDK destroy command to destroy previously deployed stack
+
 ## AWS CDK Outputs
 
 To simplify verification of deployed stack corresponding outputs are added to the stack as can be seen at the image below (Both outputs are provided below as well to simplify cross-check verification).
