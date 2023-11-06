@@ -15,7 +15,7 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 - [Prettier](https://prettier.io/) as a code formatting tool
 - [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
-Available NPM Scripts
+## NPM Scripts
 
 * `start` - Starts the project in dev mode with mocked API on local environment.
 
@@ -28,6 +28,8 @@ Available NPM Scripts
 * `lint`, `prettier` - Runs linting and formatting for all files in `src` folder.
 
 # AWS CDK Stack
+
+AWS CDK code is written in Typescript (located at `./cdk`) and compiled using ESBuild: [patched AWS CDK Workshop](https://github.com/hazardsoft/aws-cdk-workshop) is used as a template taking into account that further Lambda functions will be developed as ESM.
 
 ## NPM scripts
 
