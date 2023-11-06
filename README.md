@@ -15,24 +15,36 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 - [Prettier](https://prettier.io/) as a code formatting tool
 - [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
-## Available Scripts
+Available NPM Scripts
 
-### `start`
+* `start` - Starts the project in dev mode with mocked API on local environment.
 
-Starts the project in dev mode with mocked API on local environment.
+* `build` - Builds the project for production in `dist` folder.
 
-### `build`
+* `preview` - Starts the project in production mode on local environment.
 
-Builds the project for production in `dist` folder.
+* `test`, `test:ui`, `test:coverage` - Runs tests in console, in browser or with coverage.
 
-### `preview`
+* `lint`, `prettier` - Runs linting and formatting for all files in `src` folder.
 
-Starts the project in production mode on local environment.
+# AWS CDK Stack
 
-### `test`, `test:ui`, `test:coverage`
+## NPM scripts
 
-Runs tests in console, in browser or with coverage.
+* `cdk:diff` - Runs AWS CDK diff command to illustrate how local template is different to a deployed one
 
-### `lint`, `prettier`
+* `cdk:deploy` - Runs AWS CDK deploy command to deploy stack
 
-Runs linting and formatting for all files in `src` folder.
+## AWS CDK Outputs
+
+To simplify verification of deployed stack corresponding outputs are added to the stack as can be seen at the image below (Both outputs are provided below as well to simplify cross-check verification).
+
+![image](./images/stack-outputs.png)
+
+### CloudFront
+
+Static website is served via CloudFront distribution available at https://du5vmcpwti84k.cloudfront.net/
+
+### S3 Bucket Url
+
+CloudFront uses S3 Bucket as the origin at http://rs-aws-static-site.s3-website.eu-central-1.amazonaws.com/ (not available directly, S3 bucket's policy allows CloudFront distribution to get objects)

@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "composite": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "sourceMap": false,
+        "strict": true,
+        "outDir": "cdk.dist"
+    },
+    "include": ["cdk/"]
+}

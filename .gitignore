@@ -24,3 +24,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# CDK
+cdk.out/
+cdk.dist/
