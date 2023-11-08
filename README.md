@@ -29,7 +29,20 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 
 # AWS CDK Stack
 
-AWS CDK code is written in Typescript (located at `./cdk`) and compiled using ESBuild: [patched AWS CDK Workshop](https://github.com/hazardsoft/aws-cdk-workshop) is used as a template taking into account that further Lambda functions will be developed as ESM.
+AWS CDK code is written in Typescript (located at `./cdk`) and compiled using ESBuild: [patched AWS CDK Workshop](https://github.com/hazardsoft/aws-cdk-workshop) is used as a template taking into account that Lambda functions will be developed as ESM in the next tasks.
+
+## Important Notes
+
+### Legacy Entries
+
+There are discrepancies between AWS Console and AWS CDK API in handling some CloudFront configuration provided by default:
+
+1. AWS Console encourages use of `Origin access control settings (recommended)` but AWS CDK uses `Legacy access identities` while configuring CloudFront origin;
+
+2. AWS Console encourages use of `Cache policy and origin request policy (recommended)` but AWS CDK uses `Legacy cache settings` while configuring CloudFront default behavior.
+
+To address both issues AWS CDK template is updated manually (please see changes for [CloudFront origin](https://github.com/hazardsoft/nodejs-aws-shop-react/blob/task-2/cdk/StaticSiteConstruct.ts#L58-L59) and [CloudFront behavior](https://github.com/hazardsoft/nodejs-aws-shop-react/blob/task-2/cdk/StaticSiteConstruct.ts#L62-L65))
+
 
 ## NPM scripts
 
