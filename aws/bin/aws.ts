@@ -33,3 +33,6 @@ new deployment.BucketDeployment(stack, 'ShopFEDeployment', {
 new cdk.CfnOutput(stack, 'Domain URL', {
     value: cloudfront.distributionDomainName,
 });
+new cdk.CfnOutput(stack, 'S3 URL', {
+  value: bucket.bucketDomainName,
+});
