@@ -1,11 +1,14 @@
 {
-  "name": "my-store-app",
+  "name": "rs-aws-front",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "npm run build && vite preview",
+    "deploy": "npm run build && npm --prefix ./aws_cdk/ run deploy",
+    "destroy": "npm --prefix ./aws_cdk/ run destroy",
+    "synth": "npm --prefix ./aws_cdk/ run synth",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
@@ -17,7 +20,6 @@
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
-    "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
@@ -50,7 +52,7 @@
     "vitest": "^0.17.1"
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": "dist"
   },
   "engines": {
     "node": ">=14.0.0"

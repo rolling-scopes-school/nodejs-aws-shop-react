@@ -1,3 +1,10 @@
+## Link for project
+
+S3bucket: http://rs-aws-front-cdn.s3-website-eu-west-1.amazonaws.com
+
+CloudFront: https://d36mdkr56z7a97.cloudfront.net/
+
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
@@ -29,9 +36,17 @@ Builds the project for production in `dist` folder.
 
 Starts the project in production mode on local environment.
 
-### `test`, `test:ui`, `test:coverage`
+### `deploy`
 
-Runs tests in console, in browser or with coverage.
+Build the project and deploy folder 'dist' in AWS Cloud. Also create cloud infrastructure
+
+### `destroy`
+
+Delete the project in AWS Cloud.
+
+### `synth`
+
+Definition of your infrastructure using code.
 
 ### `lint`, `prettier`
 
