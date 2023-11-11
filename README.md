@@ -36,3 +36,18 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## CDK scripts
+
+### `build-cdk`
+
+Runs compiling cdk.ts
+
+### cdk bootstrap --profile=default
+
+Runs bootstrap
+
+### cdk deploy --profile=default --require-approval=never
+
+Runs deploying project (from folder 'dist') to AWS
+

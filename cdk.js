@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const cdk = require("@aws-cdk/core");
+const static_site_1 = require("./cdk/static-site");
+class MyStaticSiteStack extends cdk.Stack {
+    constructor(parent, name) {
+        super(parent, name);
+        new static_site_1.StaticSite(this, 'JSCCStaticWebsite');
+    }
+}
+const app = new cdk.App();
+new MyStaticSiteStack(app, 'MyJSCCStaticWebsite');
+app.synth();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2RrLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY2RrLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUNBLHFDQUFxQztBQUNyQyxtREFBK0M7QUFFL0MsTUFBTSxpQkFBa0IsU0FBUSxHQUFHLENBQUMsS0FBSztJQUN2QyxZQUFZLE1BQWUsRUFBRSxJQUFZO1FBQ3ZDLEtBQUssQ0FBQyxNQUFNLEVBQUUsSUFBSSxDQUFDLENBQUM7UUFFcEIsSUFBSSx3QkFBVSxDQUFDLElBQUksRUFBRSxtQkFBbUIsQ0FBQyxDQUFDO0lBQzVDLENBQUM7Q0FDRjtBQUVELE1BQU0sR0FBRyxHQUFHLElBQUksR0FBRyxDQUFDLEdBQUcsRUFBRSxDQUFDO0FBRTFCLElBQUksaUJBQWlCLENBQUMsR0FBRyxFQUFFLHFCQUFxQixDQUFDLENBQUM7QUFFbEQsR0FBRyxDQUFDLEtBQUssRUFBRSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiIyEvdXNyL2Jpbi9lbnYgbm9kZVxyXG5pbXBvcnQgKiBhcyBjZGsgZnJvbSAnQGF3cy1jZGsvY29yZSc7XHJcbmltcG9ydCB7IFN0YXRpY1NpdGUgfSBmcm9tICcuL2Nkay9zdGF0aWMtc2l0ZSc7XHJcblxyXG5jbGFzcyBNeVN0YXRpY1NpdGVTdGFjayBleHRlbmRzIGNkay5TdGFjayB7XHJcbiAgY29uc3RydWN0b3IocGFyZW50OiBjZGsuQXBwLCBuYW1lOiBzdHJpbmcpIHtcclxuICAgIHN1cGVyKHBhcmVudCwgbmFtZSk7XHJcblxyXG4gICAgbmV3IFN0YXRpY1NpdGUodGhpcywgJ0pTQ0NTdGF0aWNXZWJzaXRlJyk7XHJcbiAgfVxyXG59XHJcblxyXG5jb25zdCBhcHAgPSBuZXcgY2RrLkFwcCgpO1xyXG5cclxubmV3IE15U3RhdGljU2l0ZVN0YWNrKGFwcCwgJ015SlNDQ1N0YXRpY1dlYnNpdGUnKTtcclxuXHJcbmFwcC5zeW50aCgpO1xyXG4iXX0=
