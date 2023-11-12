@@ -47,6 +47,9 @@ To deploy this app to AWS:
 2. Run ``cdk:bootstrap``
 3. Run ``deploy`` if you want build with deploy in the same time
 
+For invalidation CloudFront cache run ``npm run invalidate-cache`` before deploy (build must have already been deployed previously).
+Replace YOUR_DISTRIBUTION_ID by your distribution id in package.json.
+
 My link to cloudfront:
 https://d2lr8n92zatb2h.cloudfront.net
 
