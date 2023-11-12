@@ -90,13 +90,13 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000f",
-              "id": "2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000f",
+              "path": "asset.168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9",
+              "id": "168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9",
               "packaging": "zip",
-              "sourceHash": "2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000f",
-              "s3BucketParameter": "AssetParameters2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000fS3BucketE7A3D270",
-              "s3KeyParameter": "AssetParameters2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000fS3VersionKey7934622B",
-              "artifactHashParameter": "AssetParameters2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000fArtifactHash5C7A644C"
+              "sourceHash": "168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9",
+              "s3BucketParameter": "AssetParameters168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9S3Bucket9F51E61E",
+              "s3KeyParameter": "AssetParameters168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9S3VersionKeyA054F133",
+              "artifactHashParameter": "AssetParameters168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9ArtifactHashC071B395"
             },
             "trace": [
               "ConstructNode.addMetadata (D:\\NodeJS\\aws\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:416:62)",
@@ -412,10 +412,10 @@
             ]
           }
         ],
-        "/MyJSCCStaticWebsite/AssetParameters/2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000f/S3Bucket": [
+        "/MyJSCCStaticWebsite/AssetParameters/168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000fS3BucketE7A3D270",
+            "data": "AssetParameters168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9S3Bucket9F51E61E",
             "trace": [
               "new FileAssetParameters (D:\\NodeJS\\aws\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:12:36)",
               "LegacyStackSynthesizer.doAddFileAsset (D:\\NodeJS\\aws\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:189:22)",
@@ -441,10 +441,10 @@
             ]
           }
         ],
-        "/MyJSCCStaticWebsite/AssetParameters/2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000f/S3VersionKey": [
+        "/MyJSCCStaticWebsite/AssetParameters/168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000fS3VersionKey7934622B",
+            "data": "AssetParameters168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9S3VersionKeyA054F133",
             "trace": [
               "new FileAssetParameters (D:\\NodeJS\\aws\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:16:35)",
               "LegacyStackSynthesizer.doAddFileAsset (D:\\NodeJS\\aws\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:189:22)",
@@ -470,10 +470,10 @@
             ]
           }
         ],
-        "/MyJSCCStaticWebsite/AssetParameters/2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000f/ArtifactHash": [
+        "/MyJSCCStaticWebsite/AssetParameters/168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters2ad277a7a922b46c134993c950b2c6d4f2d768b60dec86b1cc05c7cce8ab000fArtifactHash5C7A644C",
+            "data": "AssetParameters168818071add27eba83b1c2bd1cbed9760e233b2fd658ceb77f1c3a196f6c9e9ArtifactHashC071B395",
             "trace": [
               "new FileAssetParameters (D:\\NodeJS\\aws\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:20:38)",
               "LegacyStackSynthesizer.doAddFileAsset (D:\\NodeJS\\aws\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:189:22)",
