@@ -16,7 +16,7 @@ export class StaticSiteConstruct extends Construct {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
       autoDeleteObjects: true,
-      removalPolicy: RemovalPolicy.DESTROY
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     const originAccessControl = new cloudFront.CfnOriginAccessControl(
@@ -27,8 +27,8 @@ export class StaticSiteConstruct extends Construct {
           name: "rs-aws-static-site-origin-access-protocol",
           originAccessControlOriginType: "s3",
           signingProtocol: "sigv4",
-          signingBehavior: "always"
-        }
+          signingBehavior: "always",
+        },
       }
     );
 
@@ -41,7 +41,7 @@ export class StaticSiteConstruct extends Construct {
         originConfigs: [
           {
             s3OriginSource: {
-              s3BucketSource: bucket
+              s3BucketSource: bucket,
             },
             behaviors: [
               {
@@ -54,17 +54,33 @@ export class StaticSiteConstruct extends Construct {
     );
 
     // workaround to use Origin Access Control instead of legacy Origin Access Identity
-    const cfnDistribution = distribution.node.defaultChild as cloudFront.CfnDistribution;
-    cfnDistribution.addPropertyOverride("DistributionConfig.Origins.0.S3OriginConfig.OriginAccessIdentity", "");
-    cfnDistribution.addPropertyOverride("DistributionConfig.Origins.0.OriginAccessControlId", originAccessControl.getAtt("Id"));
+    const cfnDistribution = distribution.node
+      .defaultChild as cloudFront.CfnDistribution;
+    cfnDistribution.addPropertyOverride(
+      "DistributionConfig.Origins.0.S3OriginConfig.OriginAccessIdentity",
+      ""
+    );
+    cfnDistribution.addPropertyOverride(
+      "DistributionConfig.Origins.0.OriginAccessControlId",
+      originAccessControl.getAtt("Id")
+    );
 
     // workaround to use Cache Policy instead of legacy Cache Behavior
-    cfnDistribution.addPropertyDeletionOverride("DistributionConfig.DefaultCacheBehavior.AllowedMethods");
-    cfnDistribution.addPropertyDeletionOverride("DistributionConfig.DefaultCacheBehavior.CachedMethods");
-    cfnDistribution.addPropertyDeletionOverride("DistributionConfig.DefaultCacheBehavior.ForwardedValues");
-    cfnDistribution.addPropertyOverride("DistributionConfig.DefaultCacheBehavior.CachePolicyId", cloudFront.CachePolicy.CACHING_OPTIMIZED.cachePolicyId);
-        
-    const distributionArn = `arn:aws:cloudfront::${distribution.stack.account}:distribution/${distribution.distributionId}`
+    cfnDistribution.addPropertyDeletionOverride(
+      "DistributionConfig.DefaultCacheBehavior.AllowedMethods"
+    );
+    cfnDistribution.addPropertyDeletionOverride(
+      "DistributionConfig.DefaultCacheBehavior.CachedMethods"
+    );
+    cfnDistribution.addPropertyDeletionOverride(
+      "DistributionConfig.DefaultCacheBehavior.ForwardedValues"
+    );
+    cfnDistribution.addPropertyOverride(
+      "DistributionConfig.DefaultCacheBehavior.CachePolicyId",
+      cloudFront.CachePolicy.CACHING_OPTIMIZED.cachePolicyId
+    );
+
+    const distributionArn = `arn:aws:cloudfront::${distribution.stack.account}:distribution/${distribution.distributionId}`;
 
     bucket.addToResourcePolicy(
       new iam.PolicyStatement({
@@ -73,13 +89,13 @@ export class StaticSiteConstruct extends Construct {
         principals: [new iam.ServicePrincipal("cloudfront.amazonaws.com")],
         conditions: {
           StringEquals: {
-            "AWS:SourceArn": distributionArn
-          }
-        }
+            "AWS:SourceArn": distributionArn,
+          },
+        },
       })
-    ); 
+    );
 
-    const deployment = new s3Deployment.BucketDeployment(this, "StaticSiteDeployment", {
+    new s3Deployment.BucketDeployment(this, "StaticSiteDeployment", {
       sources: [s3Deployment.Source.asset("./dist")],
       destinationBucket: bucket,
       distribution,
@@ -92,10 +108,10 @@ export class StaticSiteConstruct extends Construct {
 
     new CfnOutput(this, "S3BucketUrl", {
       value: bucket.bucketWebsiteUrl,
-    })
+    });
 
     new CfnOutput(this, "CloudFrontUrl", {
       value: distribution.distributionDomainName,
-    })
+    });
   }
 }
