@@ -10,14 +10,17 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk:bootstrap": "npx cdk bootstrap",
+    "cloudfront:setup": "cdk deploy",
+    "s3:update": "aws s3 cp ./dist s3://new-my-shop-bucket --recursive",
+    "invalidate cache": "aws cloudfront create-invalidation --distribution-id E19H8X950QIIMN --paths '/*'"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
-    "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
@@ -25,7 +28,10 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "aws-cdk-lib": "2.105.0",
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.21"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -47,7 +53,10 @@
     "prettier": "2.7.1",
     "typescript": "^4.7.4",
     "vite": "^2.9.13",
-    "vitest": "^0.17.1"
+    "vitest": "^0.17.1",
+    "aws-cdk": "2.105.0",
+    "ts-node": "^10.9.1",
+    "@types/node": "20.7.1"
   },
   "msw": {
     "workerDirectory": "public"

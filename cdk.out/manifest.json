@@ -1,0 +1,178 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "MyNewShop.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MyNewShop.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MyNewShop": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "MyNewShop.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/f87876fe765d42b25fd389b58dd31be41784d4e6b021e80d01947ccf47139e26.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MyNewShop.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MyNewShop.assets"
+      ],
+      "metadata": {
+        "/MyNewShop/MyShopBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyShopBucket3363D19F"
+          }
+        ],
+        "/MyNewShop/MyShopBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyShopBucketPolicyD66D75F8"
+          }
+        ],
+        "/MyNewShop/MyShopBucketOAI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyShopBucketOAI8D595085"
+          }
+        ],
+        "/MyNewShop/MyShopDistribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyShopDistributionCDAE0466"
+          }
+        ],
+        "/MyNewShop/DeployMyShop/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployMyShopAwsCliLayerFAB1B7D1"
+          }
+        ],
+        "/MyNewShop/DeployMyShop/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployMyShopCustomResource8AD317E5"
+          }
+        ],
+        "/MyNewShop/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+          }
+        ],
+        "/MyNewShop/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
+          }
+        ],
+        "/MyNewShop/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
+          }
+        ],
+        "/MyNewShop/Domain URL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DomainURL"
+          }
+        ],
+        "/MyNewShop/CloudFrontInvalidation-1699804272233": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "installLatestAwsSdk was not specified, and defaults to true. You probably do not want this. Set the global context flag '@aws-cdk/customresources:installLatestAwsSdkDefault' to false to switch this behavior off project-wide, or set the property explicitly to true if you know you need to call APIs that are not in Lambda's built-in SDK version. [ack: @aws-cdk/custom-resources:installLatestAwsSdkNotSpecified]",
+            "trace": [
+              "Annotations.addMessage (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1526)",
+              "Annotations.addWarningV2 (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "new AwsCustomResource (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/aws-cdk-lib/custom-resources/lib/aws-custom-resource/aws-custom-resource.js:1:5063)",
+              "Object.<anonymous> (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/cdk.ts:60:31)",
+              "Module._compile (node:internal/modules/cjs/loader:1256:14)",
+              "Module.m._compile (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1310:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1119:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:960:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "phase4 (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/Users/lajika/Desktop/RSLab/AWS Developer/nodejs-aws-shop-react/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1256:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1310:10)",
+              "Module.load (node:internal/modules/cjs/loader:1119:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:960:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:23:47"
+            ]
+          }
+        ],
+        "/MyNewShop/CloudFrontInvalidation-1699804272233/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CloudFrontInvalidation16998042722339AADFED6"
+          }
+        ],
+        "/MyNewShop/CloudFrontInvalidation-1699804272233/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CloudFrontInvalidation1699804272233CustomResourcePolicy04C50E5E"
+          }
+        ],
+        "/MyNewShop/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+          }
+        ],
+        "/MyNewShop/AWS679f53fac002430cb0da5b7982bd2287/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd22872D164C4C"
+          }
+        ],
+        "/MyNewShop/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/MyNewShop/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MyNewShop/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MyNewShop"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
