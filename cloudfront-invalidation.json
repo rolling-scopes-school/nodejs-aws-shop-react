@@ -1,0 +1,9 @@
+{
+    "Paths": {
+      "Quantity": 1,
+      "Items": [
+        "/*"
+      ]
+    },
+    "CallerReference": "unique-reference-abc123"
+  }

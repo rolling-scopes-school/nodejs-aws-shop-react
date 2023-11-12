@@ -36,3 +36,19 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+How to run app locally and make a build:
+1. Run ``npm i --legacy-peer-deps``
+2. Run ``npm run build``
+3. Run ``npm run preview``
+
+To deploy this app to AWS:
+1. Run and configure ``aws configure``
+2. Run ``cdk:bootstrap``
+3. Run ``deploy`` if you want build with deploy in the same time
+
+My link to cloudfront:
+https://d2lr8n92zatb2h.cloudfront.net
+
+My S3-website link: 
+http://cdk-hnb659fds-assets-504137854779-us-east-1.s3-website-us-east-1.amazonaws.com/

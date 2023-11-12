@@ -10,7 +10,10 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk:bootstrap": "npx cdk:bootstrap",
+    "deploy": "npm run build && cdk deploy",
+    "invalidate-cache": "aws cloudfront create-invalidation --distribution-id EGIOSIE0G3KS1 --invalidation-batch file://cloudfront-invalidation.json --output json"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -19,7 +22,7 @@
     "@mui/material": "^5.8.7",
     "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
-    "axios": "^0.27.2",
+    "axios": "^1.6.1",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,7 +40,10 @@
     "@typescript-eslint/parser": "^5.30.5",
     "@vitejs/plugin-react": "^1.3.2",
     "@vitest/ui": "^0.18.0",
+    "aws-cdk-lib": "^2.106.1",
     "c8": "^7.11.3",
+    "cdk": "^2.106.1",
+    "constructs": "^10.3.0",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
