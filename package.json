@@ -13,7 +13,7 @@
     "prettier": "prettier src --write",
     "cdk:bootstrap": "npx cdk:bootstrap",
     "deploy": "npm run build && cdk deploy",
-    "invalidate-cache": "aws cloudfront create-invalidation --distribution-id EGIOSIE0G3KS1 --invalidation-batch file://cloudfront-invalidation.json --output json"
+    "invalidate-cache": "aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --invalidation-batch file://cloudfront-invalidation.json --output json"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
