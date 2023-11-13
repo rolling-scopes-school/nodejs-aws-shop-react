@@ -1,3 +1,7 @@
+# Task 2 
+- [S3 Bucket with 403 error](http://my-shop-app.s3-website.eu-central-1.amazonaws.com/)
+- [CloudFront](https://d2p0slgz916rya.cloudfront.net/)
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
