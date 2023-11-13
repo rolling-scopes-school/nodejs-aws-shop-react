@@ -13,4 +13,4 @@ Service is done,
 
 Additional scope - S3 bucket creation, website deployment, CloudFront Distribution and Invalidation added and configured by using AWS CDK.
 
-nodejs-aws-shop-react lockated in site-contents folder
+builded SHOP and code for deploing  lockated nodejs-aws-shop-react_dev folder
