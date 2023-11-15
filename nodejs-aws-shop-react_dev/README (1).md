@@ -15,3 +15,12 @@ Task 2.3 - https://d2v1s3pskpkol8.cloudfront.net  (cdk maden)
    Additional scope - S3 bucket creation, website deployment, CloudFront Distribution and Invalidation added and configured by using AWS CDK.
 
    nodejs-aws-shop-react   lockated in site-contents folder
+
+Additional scope - S3 bucket creation, website deployment, CloudFront Distribution and Invalidation added and configured by using AWS CDK.
+
+nodejs-aws-shop-react lockated in site-contents folder
+
+run comands: 
+tsc 
+cdk bootstrup --profile= YouProfile_in_aws 
+cdk deploy --profile= YouProfile_in_aws
