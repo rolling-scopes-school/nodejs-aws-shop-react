@@ -8,7 +8,11 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "cdk:bootstrap": "cdk bootstrap",
+    "cdk:deploy": "cdk deploy",
+    "cloudfront:destroy": "cdk destroy",
+    "cloudfront:build:setup": "npm run build && cdk deploy"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
