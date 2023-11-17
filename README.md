@@ -1,5 +1,22 @@
 # React-shop-cloudfront
 
+## Task 2
+
+- Link to S3-website: http://aws-2023-q4-course.s3-website-eu-west-1.amazonaws.com
+- Link to CloudFront: https://d6yi9zf2tot78.cloudfront.net
+
+- Link to APP that was created using CDK and another bucket: https://d37k2ipkdi7gkj.cloudfront.net
+   - Steps: 
+        - install cdk-lib
+        - create cdk folder
+        - enter cdk folder
+        - init cdk with 'cdk init app --language=typescript'
+        - add scripts to cdk.json
+        - add cdk.ts file 
+        - run 'cdk bootstrap'
+        - run 'cdk deploy'
+
+# Technologies
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
