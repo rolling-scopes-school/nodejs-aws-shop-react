@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { useCart } from "~/queries/cart";
 
 export default function Cart() {
-  const { data = [] } = useCart();
+  // const { data = [] } = useCart();
+  const data = [];
   const badgeContent = data.length || undefined;
 
   return (

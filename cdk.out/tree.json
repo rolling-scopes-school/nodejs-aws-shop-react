@@ -615,13 +615,13 @@
               "version": "2.105.0"
             }
           },
-          "CloudFrontInvalidation-1699804272233": {
-            "id": "CloudFrontInvalidation-1699804272233",
-            "path": "MyNewShop/CloudFrontInvalidation-1699804272233",
+          "CloudFrontInvalidation-1700140828845": {
+            "id": "CloudFrontInvalidation-1700140828845",
+            "path": "MyNewShop/CloudFrontInvalidation-1700140828845",
             "children": {
               "Provider": {
                 "id": "Provider",
-                "path": "MyNewShop/CloudFrontInvalidation-1699804272233/Provider",
+                "path": "MyNewShop/CloudFrontInvalidation-1700140828845/Provider",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_lambda.SingletonFunction",
                   "version": "2.105.0"
@@ -629,11 +629,11 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "MyNewShop/CloudFrontInvalidation-1699804272233/Resource",
+                "path": "MyNewShop/CloudFrontInvalidation-1700140828845/Resource",
                 "children": {
                   "Default": {
                     "id": "Default",
-                    "path": "MyNewShop/CloudFrontInvalidation-1699804272233/Resource/Default",
+                    "path": "MyNewShop/CloudFrontInvalidation-1700140828845/Resource/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
                       "version": "2.105.0"
@@ -647,11 +647,11 @@
               },
               "CustomResourcePolicy": {
                 "id": "CustomResourcePolicy",
-                "path": "MyNewShop/CloudFrontInvalidation-1699804272233/CustomResourcePolicy",
+                "path": "MyNewShop/CloudFrontInvalidation-1700140828845/CustomResourcePolicy",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "MyNewShop/CloudFrontInvalidation-1699804272233/CustomResourcePolicy/Resource",
+                    "path": "MyNewShop/CloudFrontInvalidation-1700140828845/CustomResourcePolicy/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                       "aws:cdk:cloudformation:props": {
@@ -665,7 +665,7 @@
                           ],
                           "Version": "2012-10-17"
                         },
-                        "policyName": "CloudFrontInvalidation1699804272233CustomResourcePolicy04C50E5E",
+                        "policyName": "CloudFrontInvalidation1700140828845CustomResourcePolicyB8552F61",
                         "roles": [
                           {
                             "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"

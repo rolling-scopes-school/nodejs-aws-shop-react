@@ -196,7 +196,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "e118ca98a4ee0035a912b993ed224dc1c233dc9310cb4a77a2f1709424a6983a.zip"
+     "4a005ffbe7df27b3aa414157c2bfda0d1b4aa47f08d2add8c770f5ef52bed5eb.zip"
     ],
     "DestinationBucketName": {
      "Ref": "MyShopBucket3363D19F"
@@ -394,7 +394,7 @@
     "aws:asset:property": "Code"
    }
   },
-  "CloudFrontInvalidation16998042722339AADFED6": {
+  "CloudFrontInvalidation170014082884584FA2EC9": {
    "Type": "Custom::AWS",
    "Properties": {
     "ServiceToken": {
@@ -403,20 +403,20 @@
       "Arn"
      ]
     },
-    "Create": "{\"physicalResourceId\":{\"id\":\"E19H8X950QIIMN-1699804272233\"},\"service\":\"CloudFront\",\"action\":\"createInvalidation\",\"parameters\":{\"DistributionId\":\"E19H8X950QIIMN\",\"InvalidationBatch\":{\"CallerReference\":\"1699804272233\",\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]}}}}",
+    "Create": "{\"physicalResourceId\":{\"id\":\"E19H8X950QIIMN-1700140828845\"},\"service\":\"CloudFront\",\"action\":\"createInvalidation\",\"parameters\":{\"DistributionId\":\"E19H8X950QIIMN\",\"InvalidationBatch\":{\"CallerReference\":\"1700140828845\",\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]}}}}",
     "InstallLatestAwsSdk": true
    },
    "DependsOn": [
-    "CloudFrontInvalidation1699804272233CustomResourcePolicy04C50E5E",
+    "CloudFrontInvalidation1700140828845CustomResourcePolicyB8552F61",
     "MyShopDistributionCDAE0466"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "MyNewShop/CloudFrontInvalidation-1699804272233/Resource/Default"
+    "aws:cdk:path": "MyNewShop/CloudFrontInvalidation-1700140828845/Resource/Default"
    }
   },
-  "CloudFrontInvalidation1699804272233CustomResourcePolicy04C50E5E": {
+  "CloudFrontInvalidation1700140828845CustomResourcePolicyB8552F61": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -429,7 +429,7 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "CloudFrontInvalidation1699804272233CustomResourcePolicy04C50E5E",
+    "PolicyName": "CloudFrontInvalidation1700140828845CustomResourcePolicyB8552F61",
     "Roles": [
      {
       "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
@@ -440,7 +440,7 @@
     "MyShopDistributionCDAE0466"
    ],
    "Metadata": {
-    "aws:cdk:path": "MyNewShop/CloudFrontInvalidation-1699804272233/CustomResourcePolicy/Resource"
+    "aws:cdk:path": "MyNewShop/CloudFrontInvalidation-1700140828845/CustomResourcePolicy/Resource"
    }
   },
   "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {

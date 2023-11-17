@@ -10,7 +10,7 @@ import { useAvailableProducts } from "~/queries/products";
 
 export default function Products() {
   const { data = [], isLoading } = useAvailableProducts();
-
+  // console.log();
   if (isLoading) {
     return <Typography>Loading...</Typography>;
   }
