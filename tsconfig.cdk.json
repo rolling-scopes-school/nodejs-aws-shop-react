@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "sourceMap": false,
+        "strict": true,
+        "outDir": "cdk.dist"
+    },
+    "include": ["cdk/"]
+}
