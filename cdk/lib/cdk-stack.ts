@@ -14,8 +14,8 @@ export class CdkStack extends cdk.Stack {
     super(scope, id, props);
     const cloudfrontOAI = new OriginAccessIdentity(this, "OAI");
 
-    const siteBucket = new Bucket(this, "CDKSecondBucket", {
-      bucketName: "maxka-cdk-second-bucket-s3",
+    const siteBucket = new Bucket(this, "CDKLatestBucket", {
+      bucketName: "maxka-cdk-latest2-bucket-s3",
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "index.html",
       publicReadAccess: false,
