@@ -33,7 +33,7 @@ export default function Header() {
             underline="none"
             to="/"
           >
-            Cloud shop
+            Cloud service store
           </Link>
         </Typography>
 
