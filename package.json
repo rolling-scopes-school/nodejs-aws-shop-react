@@ -5,6 +5,8 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
+    "bootstrap": "cdk bootstrap --profile=MyUser",
+    "deploy": "cdk deploy --profile=MyUser --require-approval=never",
     "preview": "npm run build && vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -13,6 +15,9 @@
     "prettier": "prettier src --write"
   },
   "dependencies": {
+    "@aws-cdk/aws-s3": "^1.204.0",
+    "@aws-cdk/aws-s3-deployment": "^1.204.0",
+    "@aws-cdk/core": "^1.204.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
