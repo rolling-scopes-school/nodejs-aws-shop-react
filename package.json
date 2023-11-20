@@ -10,7 +10,9 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk": "cdk",
+    "synth": "cdk synth"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -25,7 +27,13 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "@aws-cdk/aws-cloudfront": "latest",
+    "@aws-cdk/aws-iam": "latest",
+    "@aws-cdk/aws-s3": "latest",
+    "@aws-cdk/aws-s3-deployment": "latest",
+    "@aws-cdk/core": "latest",
+    "aws-cdk": "latest"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
