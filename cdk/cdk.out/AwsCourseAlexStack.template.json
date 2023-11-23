@@ -194,7 +194,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "8d847d21e83e834d1f551cdc168b4fd53b89d1e40876666c83be3e17b606bfe4.zip"
+     "700ef8a94904003ec50e734df54e228154ae5cf23e6f9b675d6795944a27b207.zip"
     ],
     "DestinationBucketName": {
      "Ref": "AwsCourseAlexBucketF85CB3D3"
