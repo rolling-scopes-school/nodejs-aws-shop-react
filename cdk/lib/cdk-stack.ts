@@ -14,8 +14,8 @@ export class CdkStack extends cdk.Stack {
     super(scope, id, props);
     const cloudfrontOAI = new OriginAccessIdentity(this, "OAI");
 
-    const siteBucket = new Bucket(this, "CDKLatestBucket", {
-      bucketName: "maxka-cdk-latest2-bucket-s3",
+    const siteBucket = new Bucket(this, "ProductsBucketFE", {
+      bucketName: "products-bucket-frontend",
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "index.html",
       publicReadAccess: false,
@@ -50,7 +50,7 @@ export class CdkStack extends cdk.Stack {
       ],
     });
 
-    new BucketDeployment(this, "MK-Bucket-Deployment", {
+    new BucketDeployment(this, "ProductsBucketDeployment", {
       sources: [Source.asset("../dist")],
       destinationBucket: siteBucket,
       distribution,
