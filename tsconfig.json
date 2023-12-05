@@ -20,6 +20,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "cdk-project/lib/**/*.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
