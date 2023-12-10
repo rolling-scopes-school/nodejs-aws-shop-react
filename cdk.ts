@@ -28,6 +28,10 @@ const cloudfront = new cf.Distribution(stack, "WebAppDistributionNew", {
       originAccessIdentity,
     }),
     viewerProtocolPolicy: cf.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+    cachePolicy: cf.CachePolicy.CACHING_DISABLED,
+    originRequestPolicy: cf.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
+    responseHeadersPolicy: cf.ResponseHeadersPolicy.CORS_ALLOW_ALL_ORIGINS,
+    allowedMethods: cf.AllowedMethods.ALLOW_ALL,
   },
   defaultRootObject: "index.html",
   errorResponses: [
