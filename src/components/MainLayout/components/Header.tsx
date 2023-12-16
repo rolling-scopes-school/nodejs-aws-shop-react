@@ -33,7 +33,7 @@ export default function Header() {
             underline="none"
             to="/"
           >
-            Jimmba's Store!
+            Jimmba's Store!!!!!
           </Link>
         </Typography>
 
