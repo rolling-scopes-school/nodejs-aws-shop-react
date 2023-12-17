@@ -27,6 +27,8 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
     console.log("uploadFile to", url);
 
     const auth_token = localStorage.getItem("authorization_token");
+    console.log("auth_token", auth_token);
+
     const headers: AxiosRequestHeaders = {};
     if (auth_token) {
       headers["Authorization"] = `Basic ${auth_token}`;
@@ -70,7 +72,8 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       console.log("Result: ", result);
       setFile(undefined);
     } catch (error: any) {
-      console.error('ERROR:',  error.response.data);
+      console.error('ERROR:',  error);
+      console.error('ERROR data:',  error.data);
     }
   };
   return (
