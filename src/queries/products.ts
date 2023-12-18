@@ -65,3 +65,26 @@ export function useDeleteAvailableProduct() {
     })
   );
 }
+
+export function useImportFile(fileName?: string) {
+  return useQuery<{ uploadUrl: string }, AxiosError>(
+    ["import", { fileName }],
+    async () => {
+      const token = localStorage.getItem("authorization_token");
+      const res = await axios.get<{ uploadUrl: string }>(
+        `${API_PATHS.import}/import?name=${fileName}`,
+        {
+          headers: token
+            ? {
+                Authorization: `Basic ${localStorage.getItem(
+                  "authorization_token"
+                )}`,
+              }
+            : {},
+        }
+      );
+      return res.data;
+    },
+    { enabled: false, cacheTime: 0 }
+  );
+}

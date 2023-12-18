@@ -4,16 +4,21 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import NoAccounts from "@mui/icons-material/NoAccounts";
+
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import Cart from "~/components/MainLayout/components/Cart";
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@mui/material/Link";
+import { useAuth } from "~/context/AuthContext";
+import { Input, Button } from "@mui/material";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const auth = true;
+  const { auth, login, logout } = useAuth();
+  const [username, setUsername] = React.useState("");
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -37,7 +42,7 @@ export default function Header() {
           </Link>
         </Typography>
 
-        {auth && (
+        {auth ? (
           <div>
             <IconButton
               aria-label="account of current user"
@@ -77,6 +82,46 @@ export default function Header() {
                 onClick={handleClose}
               >
                 Manage products
+              </MenuItem>
+
+              <MenuItem onClick={logout}>Logout</MenuItem>
+            </Menu>
+          </div>
+        ) : (
+          <div>
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+              size="large"
+            >
+              <NoAccounts />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem>
+                <Input
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  type="text"
+                  placeholder="Username"
+                />
+                <Button onClick={() => login?.({ username })}>Login</Button>
               </MenuItem>
             </Menu>
           </div>
