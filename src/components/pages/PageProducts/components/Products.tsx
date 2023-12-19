@@ -10,7 +10,8 @@ import { useAvailableProducts } from "~/queries/products";
 
 export default function Products() {
   const { data = [], isLoading } = useAvailableProducts();
-
+  // console.log("data", data)
+  // console.log("data.parce", JSON.parse(data))
   if (isLoading) {
     return <Typography>Loading...</Typography>;
   }
