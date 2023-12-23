@@ -12,7 +12,7 @@ export function useAvailableProducts() {
         `${API_PATHS.product}/products`
       );
       // console.log("!!!res", JSON.parse(res.data))
-      return JSON.parse(res.data);
+      return res.data;
     }
   );
 }
