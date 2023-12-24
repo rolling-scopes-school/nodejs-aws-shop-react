@@ -40,41 +40,22 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
     }
 
     // Get the presigned URL
-    try {
-      const response = await axios({
-        method: "GET",
-        url,
-        headers: {
-          ...headers,
-        },
-        params: {
-          name: encodeURIComponent(file.name),
-        },
-      });
-
-      console.log('response', response.data);
-
-      const presignedUrl = new URL(response.data);
-      if (!presignedUrl) {
-        console.error("Url not exist!");
-        return;
-      }
-
-      console.log("PresignedUrl: ", presignedUrl);
-      console.log("File to upload: ", file.name);
-      console.log("Uploading to: ", response.data);
-
-      const result = await fetch(response.data, {
-        method: "PUT",
-        body: file,
-      });
-
-      console.log("Result: ", result);
-      setFile(undefined);
-    } catch (error: any) {
-      console.error('ERROR:',  error);
-      console.error('ERROR data:',  error.data);
-    }
+    const response = await axios({
+      method: "GET",
+      url,
+      params: {
+        name: encodeURIComponent(file.name)
+      },
+      headers
+    });
+    console.log("File to upload: ", file.name);
+    console.log("Uploading to: ", response.data);
+    const result = await fetch(response.data, {
+      method: "PUT",
+      body: file
+    });
+    console.log("Result: ", result);
+    setFile(undefined);
   };
   return (
     <Box>
