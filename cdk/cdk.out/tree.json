@@ -12,21 +12,21 @@
           "version": "1.204.0"
         }
       },
-      "MyStaticWebsite": {
-        "id": "MyStaticWebsite",
-        "path": "MyStaticWebsite",
+      "MyShopBucket": {
+        "id": "MyShopBucket",
+        "path": "MyShopBucket",
         "children": {
-          "StaticWebsite": {
-            "id": "StaticWebsite",
-            "path": "MyStaticWebsite/StaticWebsite",
+          "ShopBucket": {
+            "id": "ShopBucket",
+            "path": "MyShopBucket/ShopBucket",
             "children": {
-              "My-OAI": {
-                "id": "My-OAI",
-                "path": "MyStaticWebsite/StaticWebsite/My-OAI",
+              "My-Shop-OAI": {
+                "id": "My-Shop-OAI",
+                "path": "MyShopBucket/ShopBucket/My-Shop-OAI",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "MyStaticWebsite/StaticWebsite/My-OAI/Resource",
+                    "path": "MyShopBucket/ShopBucket/My-Shop-OAI/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
                       "aws:cdk:cloudformation:props": {
@@ -46,17 +46,17 @@
                   "version": "1.204.0"
                 }
               },
-              "MyStaticBucket": {
-                "id": "MyStaticBucket",
-                "path": "MyStaticWebsite/StaticWebsite/MyStaticBucket",
+              "MyShopBucket": {
+                "id": "MyShopBucket",
+                "path": "MyShopBucket/ShopBucket/MyShopBucket",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "MyStaticWebsite/StaticWebsite/MyStaticBucket/Resource",
+                    "path": "MyShopBucket/ShopBucket/MyShopBucket/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                       "aws:cdk:cloudformation:props": {
-                        "bucketName": "my-cloudfront-s3",
+                        "bucketName": "my-shop-avlian-90",
                         "publicAccessBlockConfiguration": {
                           "blockPublicAcls": true,
                           "blockPublicPolicy": true,
@@ -65,7 +65,7 @@
                         },
                         "tags": [
                           {
-                            "key": "aws-cdk:cr-owned:bbafc190",
+                            "key": "aws-cdk:cr-owned:b7f9aac1",
                             "value": "true"
                           }
                         ],
@@ -81,16 +81,16 @@
                   },
                   "Policy": {
                     "id": "Policy",
-                    "path": "MyStaticWebsite/StaticWebsite/MyStaticBucket/Policy",
+                    "path": "MyShopBucket/ShopBucket/MyShopBucket/Policy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "MyStaticWebsite/StaticWebsite/MyStaticBucket/Policy/Resource",
+                        "path": "MyShopBucket/ShopBucket/MyShopBucket/Policy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
                           "aws:cdk:cloudformation:props": {
                             "bucket": {
-                              "Ref": "StaticWebsiteMyStaticBucket2C933D9E"
+                              "Ref": "ShopBucketMyShopBucketC87FC888"
                             },
                             "policyDocument": {
                               "Statement": [
@@ -100,7 +100,7 @@
                                   "Principal": {
                                     "CanonicalUser": {
                                       "Fn::GetAtt": [
-                                        "StaticWebsiteMyOAI596C37A5",
+                                        "ShopBucketMyShopOAIFE46A53A",
                                         "S3CanonicalUserId"
                                       ]
                                     }
@@ -111,7 +111,7 @@
                                       [
                                         {
                                           "Fn::GetAtt": [
-                                            "StaticWebsiteMyStaticBucket2C933D9E",
+                                            "ShopBucketMyShopBucketC87FC888",
                                             "Arn"
                                           ]
                                         },
@@ -126,7 +126,7 @@
                                   "Principal": {
                                     "CanonicalUser": {
                                       "Fn::GetAtt": [
-                                        "StaticWebsiteMyOAI596C37A5",
+                                        "ShopBucketMyShopOAIFE46A53A",
                                         "S3CanonicalUserId"
                                       ]
                                     }
@@ -137,7 +137,7 @@
                                       [
                                         {
                                           "Fn::GetAtt": [
-                                            "StaticWebsiteMyStaticBucket2C933D9E",
+                                            "ShopBucketMyShopBucketC87FC888",
                                             "Arn"
                                           ]
                                         },
@@ -168,13 +168,13 @@
                   "version": "1.204.0"
                 }
               },
-              "My-distribution": {
-                "id": "My-distribution",
-                "path": "MyStaticWebsite/StaticWebsite/My-distribution",
+              "My-shop-distribution": {
+                "id": "My-shop-distribution",
+                "path": "MyShopBucket/ShopBucket/My-shop-distribution",
                 "children": {
                   "CFDistribution": {
                     "id": "CFDistribution",
-                    "path": "MyStaticWebsite/StaticWebsite/My-distribution/CFDistribution",
+                    "path": "MyShopBucket/ShopBucket/My-shop-distribution/CFDistribution",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::CloudFront::Distribution",
                       "aws:cdk:cloudformation:props": {
@@ -189,7 +189,7 @@
                               "id": "origin1",
                               "domainName": {
                                 "Fn::GetAtt": [
-                                  "StaticWebsiteMyStaticBucket2C933D9E",
+                                  "ShopBucketMyShopBucketC87FC888",
                                   "RegionalDomainName"
                                 ]
                               },
@@ -200,7 +200,7 @@
                                     [
                                       "origin-access-identity/cloudfront/",
                                       {
-                                        "Ref": "StaticWebsiteMyOAI596C37A5"
+                                        "Ref": "ShopBucketMyShopOAIFE46A53A"
                                       }
                                     ]
                                   ]
@@ -246,21 +246,21 @@
                   "version": "1.204.0"
                 }
               },
-              "My-Bucket-Deployment": {
-                "id": "My-Bucket-Deployment",
-                "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment",
+              "My-Shop-Deployment": {
+                "id": "My-Shop-Deployment",
+                "path": "MyShopBucket/ShopBucket/My-Shop-Deployment",
                 "children": {
                   "AwsCliLayer": {
                     "id": "AwsCliLayer",
-                    "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/AwsCliLayer",
+                    "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/AwsCliLayer",
                     "children": {
                       "Code": {
                         "id": "Code",
-                        "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/AwsCliLayer/Code",
+                        "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/AwsCliLayer/Code",
                         "children": {
                           "Stage": {
                             "id": "Stage",
-                            "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/AwsCliLayer/Code/Stage",
+                            "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/AwsCliLayer/Code/Stage",
                             "constructInfo": {
                               "fqn": "@aws-cdk/core.AssetStaging",
                               "version": "1.204.0"
@@ -268,7 +268,7 @@
                           },
                           "AssetBucket": {
                             "id": "AssetBucket",
-                            "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/AwsCliLayer/Code/AssetBucket",
+                            "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/AwsCliLayer/Code/AssetBucket",
                             "constructInfo": {
                               "fqn": "@aws-cdk/aws-s3.BucketBase",
                               "version": "1.204.0"
@@ -282,7 +282,7 @@
                       },
                       "Resource": {
                         "id": "Resource",
-                        "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/AwsCliLayer/Resource",
+                        "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/AwsCliLayer/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
                           "aws:cdk:cloudformation:props": {
@@ -340,7 +340,7 @@
                   },
                   "CustomResourceHandler": {
                     "id": "CustomResourceHandler",
-                    "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/CustomResourceHandler",
+                    "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/CustomResourceHandler",
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-lambda.SingletonFunction",
                       "version": "1.204.0"
@@ -348,11 +348,11 @@
                   },
                   "Asset1": {
                     "id": "Asset1",
-                    "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/Asset1",
+                    "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/Asset1",
                     "children": {
                       "Stage": {
                         "id": "Stage",
-                        "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/Asset1/Stage",
+                        "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/Asset1/Stage",
                         "constructInfo": {
                           "fqn": "@aws-cdk/core.AssetStaging",
                           "version": "1.204.0"
@@ -360,7 +360,7 @@
                       },
                       "AssetBucket": {
                         "id": "AssetBucket",
-                        "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/Asset1/AssetBucket",
+                        "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/Asset1/AssetBucket",
                         "constructInfo": {
                           "fqn": "@aws-cdk/aws-s3.BucketBase",
                           "version": "1.204.0"
@@ -374,11 +374,11 @@
                   },
                   "CustomResource": {
                     "id": "CustomResource",
-                    "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/CustomResource",
+                    "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/CustomResource",
                     "children": {
                       "Default": {
                         "id": "Default",
-                        "path": "MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/CustomResource/Default",
+                        "path": "MyShopBucket/ShopBucket/My-Shop-Deployment/CustomResource/Default",
                         "constructInfo": {
                           "fqn": "@aws-cdk/core.CfnResource",
                           "version": "1.204.0"
@@ -404,15 +404,15 @@
           },
           "AssetParameters": {
             "id": "AssetParameters",
-            "path": "MyStaticWebsite/AssetParameters",
+            "path": "MyShopBucket/AssetParameters",
             "children": {
               "1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5": {
                 "id": "1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5",
-                "path": "MyStaticWebsite/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5",
+                "path": "MyShopBucket/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5",
                 "children": {
                   "S3Bucket": {
                     "id": "S3Bucket",
-                    "path": "MyStaticWebsite/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3Bucket",
+                    "path": "MyShopBucket/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3Bucket",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -420,7 +420,7 @@
                   },
                   "S3VersionKey": {
                     "id": "S3VersionKey",
-                    "path": "MyStaticWebsite/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3VersionKey",
+                    "path": "MyShopBucket/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3VersionKey",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -428,7 +428,7 @@
                   },
                   "ArtifactHash": {
                     "id": "ArtifactHash",
-                    "path": "MyStaticWebsite/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/ArtifactHash",
+                    "path": "MyShopBucket/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/ArtifactHash",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -442,11 +442,11 @@
               },
               "f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da": {
                 "id": "f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da",
-                "path": "MyStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da",
+                "path": "MyShopBucket/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da",
                 "children": {
                   "S3Bucket": {
                     "id": "S3Bucket",
-                    "path": "MyStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3Bucket",
+                    "path": "MyShopBucket/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3Bucket",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -454,7 +454,7 @@
                   },
                   "S3VersionKey": {
                     "id": "S3VersionKey",
-                    "path": "MyStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3VersionKey",
+                    "path": "MyShopBucket/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3VersionKey",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -462,7 +462,7 @@
                   },
                   "ArtifactHash": {
                     "id": "ArtifactHash",
-                    "path": "MyStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/ArtifactHash",
+                    "path": "MyShopBucket/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/ArtifactHash",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -476,11 +476,11 @@
               },
               "d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531": {
                 "id": "d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531",
-                "path": "MyStaticWebsite/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531",
+                "path": "MyShopBucket/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531",
                 "children": {
                   "S3Bucket": {
                     "id": "S3Bucket",
-                    "path": "MyStaticWebsite/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3Bucket",
+                    "path": "MyShopBucket/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3Bucket",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -488,7 +488,7 @@
                   },
                   "S3VersionKey": {
                     "id": "S3VersionKey",
-                    "path": "MyStaticWebsite/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3VersionKey",
+                    "path": "MyShopBucket/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3VersionKey",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -496,7 +496,7 @@
                   },
                   "ArtifactHash": {
                     "id": "ArtifactHash",
-                    "path": "MyStaticWebsite/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/ArtifactHash",
+                    "path": "MyShopBucket/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/ArtifactHash",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.204.0"
@@ -516,15 +516,15 @@
           },
           "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C": {
             "id": "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
-            "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
+            "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole",
+                "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource",
+                    "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -563,11 +563,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy",
+                    "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource",
+                        "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -627,7 +627,7 @@
                                   "Resource": [
                                     {
                                       "Fn::GetAtt": [
-                                        "StaticWebsiteMyStaticBucket2C933D9E",
+                                        "ShopBucketMyShopBucketC87FC888",
                                         "Arn"
                                       ]
                                     },
@@ -637,7 +637,7 @@
                                         [
                                           {
                                             "Fn::GetAtt": [
-                                              "StaticWebsiteMyStaticBucket2C933D9E",
+                                              "ShopBucketMyShopBucketC87FC888",
                                               "Arn"
                                             ]
                                           },
@@ -685,11 +685,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code",
+                "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/Stage",
+                    "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/Stage",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.AssetStaging",
                       "version": "1.204.0"
@@ -697,7 +697,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/AssetBucket",
+                    "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-s3.BucketBase",
                       "version": "1.204.0"
@@ -711,7 +711,7 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
+                "path": "MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
@@ -762,7 +762,7 @@
                     "handler": "index.handler",
                     "layers": [
                       {
-                        "Ref": "StaticWebsiteMyBucketDeploymentAwsCliLayer12965E65"
+                        "Ref": "ShopBucketMyShopDeploymentAwsCliLayer609BEDB1"
                       }
                     ],
                     "runtime": "python3.7",
@@ -782,11 +782,11 @@
           },
           "CDKMetadata": {
             "id": "CDKMetadata",
-            "path": "MyStaticWebsite/CDKMetadata",
+            "path": "MyShopBucket/CDKMetadata",
             "children": {
               "Default": {
                 "id": "Default",
-                "path": "MyStaticWebsite/CDKMetadata/Default",
+                "path": "MyShopBucket/CDKMetadata/Default",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnResource",
                   "version": "1.204.0"
@@ -794,7 +794,7 @@
               },
               "Condition": {
                 "id": "Condition",
-                "path": "MyStaticWebsite/CDKMetadata/Condition",
+                "path": "MyShopBucket/CDKMetadata/Condition",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnCondition",
                   "version": "1.204.0"

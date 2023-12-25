@@ -11,9 +11,9 @@ import { Construct, Stack } from '@aws-cdk/core';
 export class StaticSite extends Construct {
     constructor(parent: Stack, name: string) {
         super(parent, name);
-        const cloudfrontOAI = new cloudfront.OriginAccessIdentity(this, "My-OAI")
-        const siteBucket = new s3.Bucket(this, "MyStaticBucket", {
-            bucketName: "my-cloudfront-s3",
+        const cloudfrontOAI = new cloudfront.OriginAccessIdentity(this, "My-Shop-OAI")
+        const siteBucket = new s3.Bucket(this, "MyShopBucket", {
+            bucketName: "my-shop-avlian-90",
             websiteIndexDocument: "index.html",
             publicReadAccess: false,
             blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL
@@ -25,7 +25,7 @@ export class StaticSite extends Construct {
             principals: [new iam.CanonicalUserPrincipal(cloudfrontOAI.cloudFrontOriginAccessIdentityS3CanonicalUserId)]
         }))
 
-        const distribution = new cloudfront.CloudFrontWebDistribution(this, "My-distribution", {
+        const distribution = new cloudfront.CloudFrontWebDistribution(this, "My-shop-distribution", {
             originConfigs: [{
                 s3OriginSource: {
                     s3BucketSource: siteBucket,
@@ -37,7 +37,7 @@ export class StaticSite extends Construct {
             }]
         })
 
-        new s3deploy.BucketDeployment(this, "My-Bucket-Deployment", {
+        new s3deploy.BucketDeployment(this, "My-Shop-Deployment", {
             sources: [s3deploy.Source.asset("../dist")],
             destinationBucket: siteBucket,
             distribution,

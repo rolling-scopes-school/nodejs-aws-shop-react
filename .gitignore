@@ -12,6 +12,7 @@ node_modules
 coverage
 dist
 dist-ssr
+cdk.out
 *.local
 
 # Editor directories and files

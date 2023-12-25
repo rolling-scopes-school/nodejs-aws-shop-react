@@ -7,15 +7,15 @@
         "file": "tree.json"
       }
     },
-    "MyStaticWebsite": {
+    "MyShopBucket": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "MyStaticWebsite.template.json",
+        "templateFile": "MyShopBucket.template.json",
         "validateOnSynth": false
       },
       "metadata": {
-        "/MyStaticWebsite": [
+        "/MyShopBucket": [
           {
             "type": "aws:cdk:asset",
             "data": {
@@ -123,10 +123,10 @@
             ]
           }
         ],
-        "/MyStaticWebsite/StaticWebsite/My-OAI/Resource": [
+        "/MyShopBucket/ShopBucket/My-Shop-OAI/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "StaticWebsiteMyOAI596C37A5",
+            "data": "ShopBucketMyShopOAIFE46A53A",
             "trace": [
               "new OriginAccessIdentity (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\aws-cloudfront\\lib\\origin-access-identity.js:45:25)",
               "new StaticSite (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\cdk\\static-site.js:13:31)",
@@ -141,10 +141,10 @@
             ]
           }
         ],
-        "/MyStaticWebsite/StaticWebsite/MyStaticBucket/Resource": [
+        "/MyShopBucket/ShopBucket/MyShopBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "StaticWebsiteMyStaticBucket2C933D9E",
+            "data": "ShopBucketMyShopBucketC87FC888",
             "trace": [
               "new Bucket (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.js:666:26)",
               "new StaticSite (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\cdk\\static-site.js:14:28)",
@@ -159,10 +159,10 @@
             ]
           }
         ],
-        "/MyStaticWebsite/StaticWebsite/MyStaticBucket/Policy/Resource": [
+        "/MyShopBucket/ShopBucket/MyShopBucket/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "StaticWebsiteMyStaticBucketPolicyF20E1155",
+            "data": "ShopBucketMyShopBucketPolicyF7ED0564",
             "trace": [
               "new BucketPolicy (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket-policy.js:45:25)",
               "Bucket.addToResourcePolicy (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.js:169:27)",
@@ -178,10 +178,10 @@
             ]
           }
         ],
-        "/MyStaticWebsite/StaticWebsite/My-distribution/CFDistribution": [
+        "/MyShopBucket/ShopBucket/My-shop-distribution/CFDistribution": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "StaticWebsiteMydistributionCFDistributionFB398BCC",
+            "data": "ShopBucketMyshopdistributionCFDistribution528F997D",
             "trace": [
               "new CloudFrontWebDistribution (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\aws-cloudfront\\lib\\web-distribution.js:326:30)",
               "new StaticSite (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\cdk\\static-site.js:25:30)",
@@ -196,10 +196,10 @@
             ]
           }
         ],
-        "/MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/AwsCliLayer/Resource": [
+        "/MyShopBucket/ShopBucket/My-Shop-Deployment/AwsCliLayer/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "StaticWebsiteMyBucketDeploymentAwsCliLayer12965E65",
+            "data": "ShopBucketMyShopDeploymentAwsCliLayer609BEDB1",
             "trace": [
               "new LayerVersion (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\aws-lambda\\lib\\layers.js:54:26)",
               "new AwsCliLayer (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\lambda-layer-awscli\\lib\\awscli-layer.js:14:9)",
@@ -216,10 +216,10 @@
             ]
           }
         ],
-        "/MyStaticWebsite/StaticWebsite/My-Bucket-Deployment/CustomResource/Default": [
+        "/MyShopBucket/ShopBucket/My-Shop-Deployment/CustomResource/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "StaticWebsiteMyBucketDeploymentCustomResource02DD5DED",
+            "data": "ShopBucketMyShopDeploymentCustomResource1A6D28D6",
             "trace": [
               "new CustomResource (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\custom-resource.js:49:25)",
               "new BucketDeployment (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task2\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\aws-s3-deployment\\lib\\bucket-deployment.js:117:19)",
@@ -235,7 +235,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3Bucket": [
+        "/MyShopBucket/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParameters1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5S3BucketA4E7C173",
@@ -264,7 +264,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3VersionKey": [
+        "/MyShopBucket/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParameters1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5S3VersionKey35F67D7E",
@@ -293,7 +293,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/ArtifactHash": [
+        "/MyShopBucket/AssetParameters/1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParameters1da15adb9ba73812c695f9922eb752050e0a392eba0a120d36d64bfce7cf8dc5ArtifactHashF0E84BB2",
@@ -322,7 +322,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3Bucket": [
+        "/MyShopBucket/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3BucketF23C0DE7",
@@ -352,7 +352,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3VersionKey": [
+        "/MyShopBucket/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daS3VersionKey5E97B17D",
@@ -382,7 +382,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/ArtifactHash": [
+        "/MyShopBucket/AssetParameters/f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParametersf98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711daArtifactHashD85D28D8",
@@ -412,7 +412,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3Bucket": [
+        "/MyShopBucket/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParametersd7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531S3Bucket85B9EB85",
@@ -441,7 +441,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3VersionKey": [
+        "/MyShopBucket/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParametersd7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531S3VersionKeyAE85A617",
@@ -470,7 +470,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/ArtifactHash": [
+        "/MyShopBucket/AssetParameters/d7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParametersd7cdc111c8d49ae29f03b9a0067a4d076f43060f28b3094c3d6c8331aa8ad531ArtifactHash147604AC",
@@ -499,7 +499,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+        "/MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
@@ -521,7 +521,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+        "/MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
@@ -549,7 +549,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+        "/MyShopBucket/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
@@ -570,7 +570,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/CDKMetadata/Default": [
+        "/MyShopBucket/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata",
@@ -592,7 +592,7 @@
             ]
           }
         ],
-        "/MyStaticWebsite/CDKMetadata/Condition": [
+        "/MyShopBucket/CDKMetadata/Condition": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadataAvailable",
@@ -615,7 +615,7 @@
           }
         ]
       },
-      "displayName": "MyStaticWebsite"
+      "displayName": "MyShopBucket"
     }
   }
 }
