@@ -5,6 +5,8 @@ import Add from "@mui/icons-material/Add";
 import Remove from "@mui/icons-material/Remove";
 import IconButton from "@mui/material/IconButton";
 import { useCart, useInvalidateCart, useUpsertCart } from "~/queries/cart";
+import { CartItem } from "~/models/CartItem";
+import { useMemo } from "react";
 
 type AddProductToCartProps = {
   product: Product;
@@ -14,7 +16,16 @@ export default function AddProductToCart({ product }: AddProductToCartProps) {
   const { data = [], isFetching } = useCart();
   const { mutate: upsertCart } = useUpsertCart();
   const invalidateCart = useInvalidateCart();
-  const cartItem = data.find((i) => i.product.id === product.id);
+
+  const cartItem = useMemo(() => {
+    if (isFetching) {
+      return;
+    }
+    return (
+      data?.length &&
+      (data as CartItem[]).find((i) => i.product.id === product.id)
+    );
+  }, [data, isFetching]);
 
   const addProduct = () => {
     upsertCart(

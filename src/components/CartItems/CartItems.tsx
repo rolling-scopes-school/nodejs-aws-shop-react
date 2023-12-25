@@ -5,6 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { CartItem } from "~/models/CartItem";
 import { formatAsPrice } from "~/utils/utils";
 import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
+import { useMemo } from "react";
 
 type CartItemsProps = {
   items: CartItem[];
@@ -12,10 +13,12 @@ type CartItemsProps = {
 };
 
 export default function CartItems({ items, isEditable }: CartItemsProps) {
-  const totalPrice: number = items.reduce(
-    (total, item) => item.count * item.product.price + total,
-    0
-  );
+  const totalPrice = useMemo(() => {
+    return items.reduce(
+      (total, item) => item.count * item.product.price + total,
+      0
+    );
+  }, [items]);
 
   return (
     <>

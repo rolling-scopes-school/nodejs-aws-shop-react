@@ -5,8 +5,8 @@ import API_PATHS from "~/constants/apiPaths";
 import { CartItem } from "~/models/CartItem";
 
 export function useCart() {
-  return useQuery<CartItem[], AxiosError>("cart", async () => {
-    const res = await axios.get<CartItem[]>(`${API_PATHS.cart}/profile/cart`, {
+  return useQuery<any, AxiosError>("cart", async () => {
+    const res = await axios.get<any>(`${API_PATHS.cart}/profile/cart`, {
       headers: {
         Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
       },

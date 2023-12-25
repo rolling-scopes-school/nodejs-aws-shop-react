@@ -34,13 +34,13 @@ export default function Orders() {
           {data?.map((order) => (
             <TableRow key={order.id}>
               <TableCell component="th" scope="row">
-                {order.address?.firstName} {order.address?.lastName}
+                {order.delivery?.firstName} {order.delivery?.lastName}
               </TableCell>
-              <TableCell align="right">{order.items.length}</TableCell>
-              <TableCell align="right">{order.address?.address}</TableCell>
               <TableCell align="right">
-                {order.statusHistory[order.statusHistory.length - 1].status}
+                {order.cart.items?.length ?? 0}{" "}
               </TableCell>
+              <TableCell align="right">{order.delivery?.address}</TableCell>
+              <TableCell align="right">{order.status}</TableCell>
               <TableCell align="right">
                 <Button
                   size="small"
@@ -48,9 +48,9 @@ export default function Orders() {
                   component={Link}
                   to={order.id}
                 >
-                  Manage
+                  View
                 </Button>
-                <Button
+                {/* <Button
                   size="small"
                   color="secondary"
                   onClick={() =>
@@ -58,7 +58,7 @@ export default function Orders() {
                   }
                 >
                   Delete
-                </Button>
+                </Button> */}
               </TableCell>
             </TableRow>
           ))}

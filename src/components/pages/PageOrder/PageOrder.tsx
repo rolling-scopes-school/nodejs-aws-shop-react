@@ -35,7 +35,13 @@ export default function PageOrder() {
     {
       queryKey: ["order", { id }],
       queryFn: async () => {
-        const res = await axios.get<Order>(`${API_PATHS.order}/order/${id}`);
+        const res = await axios.get<Order>(`${API_PATHS.order}/order/${id}`, {
+          headers: {
+            Authorization: `Basic ${localStorage.getItem(
+              "authorization_token"
+            )}`,
+          },
+        });
         return res.data;
       },
     },
@@ -55,32 +61,32 @@ export default function PageOrder() {
   ] = results;
   const { mutateAsync: updateOrderStatus } = useUpdateOrderStatus();
   const invalidateOrder = useInvalidateOrder();
-  const cartItems: CartItem[] = React.useMemo(() => {
-    if (order && products) {
-      return order.items.map((item: OrderItem) => {
-        const product = products.find((p) => p.id === item.productId);
-        if (!product) {
-          throw new Error("Product not found");
-        }
-        return { product, count: item.count };
-      });
-    }
-    return [];
-  }, [order, products]);
+  // const cartItems: CartItem[] = React.useMemo(() => {
+  //   if (order && products) {
+  //     return order.items.map((item: OrderItem) => {
+  //       const product = products.find((p) => p.id === item.productId);
+  //       if (!product) {
+  //         throw new Error("Product not found");
+  //       }
+  //       return { product, count: item.count };
+  //     });
+  //   }
+  //   return [];
+  // }, [order, products]);
 
   if (isOrderLoading || isProductsLoading) return <p>loading...</p>;
 
-  const statusHistory = order?.statusHistory || [];
+  // const statusHistory = order?.statusHistory || [];
 
-  const lastStatusItem = statusHistory[statusHistory.length - 1];
+  // const lastStatusItem = statusHistory[statusHistory.length - 1];
 
   return order ? (
     <PaperLayout>
       <Typography component="h1" variant="h4" align="center">
         Manage order
       </Typography>
-      <ReviewOrder address={order.address} items={cartItems} />
-      <Typography variant="h6">Status:</Typography>
+      <ReviewOrder address={order.delivery} items={order.cart.items as any} />
+      {/* <Typography variant="h6">Status:</Typography>
       <Typography variant="h6" color="primary">
         {lastStatusItem?.status.toUpperCase()}
       </Typography>
@@ -168,7 +174,7 @@ export default function PageOrder() {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer> */}
     </PaperLayout>
   ) : null;
 }

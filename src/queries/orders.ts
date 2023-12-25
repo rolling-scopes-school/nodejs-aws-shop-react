@@ -7,7 +7,11 @@ import { Order } from "~/models/Order";
 
 export function useOrders() {
   return useQuery<Order[], AxiosError>("orders", async () => {
-    const res = await axios.get<Order[]>(`${API_PATHS.order}/order`);
+    const res = await axios.get<Order[]>(`${API_PATHS.order}/order`, {
+      headers: {
+        Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+      },
+    });
     return res.data;
   });
 }
@@ -35,11 +39,15 @@ export function useUpdateOrderStatus() {
 
 export function useSubmitOrder() {
   return useMutation((values: Omit<Order, "id">) => {
-    return axios.put<Omit<Order, "id">>(`${API_PATHS.order}/order`, values, {
-      headers: {
-        Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
-      },
-    });
+    return axios.post<Omit<Order, "id">>(
+      `${API_PATHS.order}/profile/cart/checkout`,
+      values,
+      {
+        headers: {
+          Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+        },
+      }
+    );
   });
 }
 

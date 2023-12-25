@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 import { useCart, useInvalidateCart } from "~/queries/cart";
 import AddressForm from "~/components/pages/PageCart/components/AddressForm";
 import { useSubmitOrder } from "~/queries/orders";
+import { CartItem } from "~/models/CartItem";
 
 enum CartStep {
   ReviewCart,
@@ -34,7 +35,7 @@ const Success = () => (
       Thank you for your order.
     </Typography>
     <Typography variant="subtitle1">
-      Your order is placed. Our manager will call you soon to clarify the
+      Your order is placed. Our manager will contact you soon to clarify the
       details.
     </Typography>
   </React.Fragment>
@@ -43,7 +44,8 @@ const Success = () => (
 const steps = ["Review your cart", "Shipping address", "Review your order"];
 
 export default function PageCart() {
-  const { data = [] } = useCart();
+  const { data = {} } = useCart();
+
   const { mutate: submitOrder } = useSubmitOrder();
   const invalidateCart = useInvalidateCart();
   const [activeStep, setActiveStep] = React.useState<CartStep>(
@@ -51,7 +53,7 @@ export default function PageCart() {
   );
   const [address, setAddress] = useState<Address>(initialAddressValues);
 
-  const isCartEmpty = data.length === 0;
+  const isCartEmpty = data.data?.cart?.items.length === 0;
 
   const handleNext = () => {
     if (activeStep !== CartStep.ReviewOrder) {
@@ -59,14 +61,14 @@ export default function PageCart() {
       return;
     }
     const values = {
-      items: data.map((i) => ({
+      items: (data.data?.cart?.items as CartItem[])?.map((i) => ({
         productId: i.product.id,
         count: i.count,
       })),
       address,
     };
 
-    submitOrder(values as Omit<Order, "id">, {
+    submitOrder(values as unknown as any, {
       onSuccess: () => {
         setActiveStep(activeStep + 1);
         invalidateCart();
@@ -83,6 +85,9 @@ export default function PageCart() {
     handleNext();
   };
 
+  if (!data.data) {
+    return <>Loading...</>;
+  }
   return (
     <PaperLayout>
       <Typography component="h1" variant="h4" align="center">
@@ -98,9 +103,9 @@ export default function PageCart() {
           </Step>
         ))}
       </Stepper>
-      {isCartEmpty && <CartIsEmpty />}
+      {isCartEmpty && activeStep !== CartStep.Success && <CartIsEmpty />}
       {!isCartEmpty && activeStep === CartStep.ReviewCart && (
-        <ReviewCart items={data} />
+        <ReviewCart items={data.data?.cart.items} />
       )}
       {activeStep === CartStep.Address && (
         <AddressForm
@@ -110,7 +115,7 @@ export default function PageCart() {
         />
       )}
       {activeStep === CartStep.ReviewOrder && (
-        <ReviewOrder address={address} items={data} />
+        <ReviewOrder address={address} items={data.data?.cart.items} />
       )}
       {activeStep === CartStep.Success && <Success />}
       {!isCartEmpty &&
