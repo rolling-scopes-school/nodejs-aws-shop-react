@@ -1,4 +1,4 @@
-const bff = "https://bff.softalien.cc";
+const bff = "http://localhost:4000";
 const API_PATHS = {
   product: `${bff}/product`,
   order: `${bff}/cart`,
