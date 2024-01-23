@@ -90,13 +90,13 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60",
-              "id": "5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60",
+              "path": "asset.4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7",
+              "id": "4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7",
               "packaging": "zip",
-              "sourceHash": "5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60",
-              "s3BucketParameter": "AssetParameters5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60S3Bucket616CC10F",
-              "s3KeyParameter": "AssetParameters5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60S3VersionKey47A2043D",
-              "artifactHashParameter": "AssetParameters5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60ArtifactHashF4ED2F03"
+              "sourceHash": "4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7",
+              "s3BucketParameter": "AssetParameters4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7S3Bucket7B29FD24",
+              "s3KeyParameter": "AssetParameters4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7S3VersionKey9697A04D",
+              "artifactHashParameter": "AssetParameters4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7ArtifactHashBC5DF699"
             },
             "trace": [
               "ConstructNode.addMetadata (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task02_serving_spa\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:416:62)",
@@ -412,10 +412,10 @@
             ]
           }
         ],
-        "/MyShopBucket/AssetParameters/5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60/S3Bucket": [
+        "/MyShopBucket/AssetParameters/4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60S3Bucket616CC10F",
+            "data": "AssetParameters4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7S3Bucket7B29FD24",
             "trace": [
               "new FileAssetParameters (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task02_serving_spa\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:12:36)",
               "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task02_serving_spa\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:189:22)",
@@ -441,10 +441,10 @@
             ]
           }
         ],
-        "/MyShopBucket/AssetParameters/5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60/S3VersionKey": [
+        "/MyShopBucket/AssetParameters/4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60S3VersionKey47A2043D",
+            "data": "AssetParameters4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7S3VersionKey9697A04D",
             "trace": [
               "new FileAssetParameters (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task02_serving_spa\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:16:35)",
               "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task02_serving_spa\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:189:22)",
@@ -470,10 +470,10 @@
             ]
           }
         ],
-        "/MyShopBucket/AssetParameters/5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60/ArtifactHash": [
+        "/MyShopBucket/AssetParameters/4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters5785eed37f792b19188d2d5a53639a524e19ff26517247f262363fac01997c60ArtifactHashF4ED2F03",
+            "data": "AssetParameters4da3e2d2cb751543a783b8679a91ad3d76bf0b24013e4aac2d095f07ef7728b7ArtifactHashBC5DF699",
             "trace": [
               "new FileAssetParameters (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task02_serving_spa\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:20:38)",
               "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\liana_avagyan\\Desktop\\Liana\\AWS-Cloud-Developer\\Tasks\\Task02_serving_spa\\nodejs-aws-shop-react\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:189:22)",
