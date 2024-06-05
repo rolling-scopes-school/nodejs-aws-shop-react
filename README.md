@@ -36,3 +36,14 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### Task 2.2
+
+**Automated Deployment**
+
+- Configured S3 Bucket and Cloudfront using AWS CDK and added powershell script for **Update Process**
+
+### Task 2.3
+
+- [Cloudfront URL](https://doyd4m450pgxo.cloudfront.net/)
+- [S3 Bucket HTTP URL](http://rr-aws-spa-automated.s3-website.eu-central-1.amazonaws.com/)
