@@ -1,4 +1,5 @@
-// import * as cdk from 'aws-cdk-lib';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import * as cdk from "aws-cdk-lib";
 // import { Template } from 'aws-cdk-lib/assertions';
 // import * as AwsCdk from '../lib/aws_cdk-stack';
 

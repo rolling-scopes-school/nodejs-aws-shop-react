@@ -5,7 +5,9 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
+    "deploy": "npm run build && cd aws_cdk && cdk deploy",
     "preview": "npm run build && vite preview",
+    "destroy": "cd aws_cdk && cdk destroy -f",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
