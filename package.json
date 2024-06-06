@@ -10,7 +10,10 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "deploy": "npm run build && npm run s3:upload && npm run cloudfront:invalidate",
+    "s3:upload": "aws s3 sync dist/ s3://my-first-shop-app --delete",
+    "cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id E31YMW2ABPF6ZI --paths /*"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
