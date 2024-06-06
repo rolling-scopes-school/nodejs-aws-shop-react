@@ -1,15 +1,16 @@
-import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 import {
   aws_s3 as s3,
   aws_iam as iam,
   aws_cloudfront as cloudfront,
   aws_s3_deployment as s3deploy,
+  Stack,
+  StackProps,
 } from "aws-cdk-lib";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
-export class AwsCdkStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+export class AwsCdkStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     const cloudFrontOAI = new cloudfront.OriginAccessIdentity(
