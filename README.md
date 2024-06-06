@@ -36,3 +36,12 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `deploy`
+
+Runs deployment to s3 bucket and cloudfront
+
+## Deployments
+[s3 bucket](http://my-first-shop-app.s3-website.eu-central-1.amazonaws.com/)
+
+[cloudfront](https://d2e0a5ndy3ey2z.cloudfront.net)
