@@ -9,8 +9,7 @@ public static class Program
     {
         var app = new App();
 
-        // ReSharper disable once ObjectCreationAsStatement
-        new DeploymentStack(app, "DeploymentStack", new StackProps
+        _ = new DeploymentStack(app, "DeploymentStack", new StackProps
         {
             // If you don't specify 'env', this stack will be environment-agnostic.
             // Account/Region-dependent features and context lookups will not work,
