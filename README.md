@@ -36,3 +36,31 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## For deployment:
+
+First go to cdk folder 
+### `cd ./cdk`
+
+then run deploy 
+
+### `delploy`
+
+
+### URLs to website:
+
+### Task 2.1 Manual Deployment
+
+#### S3 bucket website: 
+
+https://my-shop-react-bucket.s3.eu-west-1.amazonaws.com/index.html
+
+#### CloudFront website: 
+
+https://d18qk7dy2mngew.cloudfront.net/
+
+### Task 2.2 Automated Deployment
+
+#### CloudFront website: 
+
+https://d3r5s5dc64z7tm.cloudfront.net
