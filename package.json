@@ -10,7 +10,9 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "deploy": "npm run build && cd aws_sdk && npm run cdk-synth && npm run cdk-deploy",
+    "destroy": "cd aws_sdk && npm run cdk-destroy"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -20,6 +22,7 @@
     "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
     "axios": "^0.27.2",
+    "constructs": "^10.3.0",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
