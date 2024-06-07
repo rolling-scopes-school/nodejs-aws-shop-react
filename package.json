@@ -5,6 +5,8 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
+    "deploy": "npm run build && cd js_dep && cdk deploy -f",
+    "destroy": "cd js_dep && cdk destroy -f",
     "preview": "npm run build && vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -19,7 +21,7 @@
     "@mui/material": "^5.8.7",
     "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
-    "axios": "^0.27.2",
+    "axios": "^1.7.2",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
