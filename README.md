@@ -1,9 +1,9 @@
 # Task 2
 
 ## Links
-CloudFront (should work): [https://dn09fj8ftxbnp.cloudfront.net](https://dn09fj8ftxbnp.cloudfront.net)
+CloudFront (should work): https://d278tods4kq85n.cloudfront.net
 
-S3 (shouldn't work): [http://deploymentstack-awsshopreactd2879717-zr88ij02pidv.s3-website.eu-central-1.amazonaws.com](http://deploymentstack-awsshopreactd2879717-zr88ij02pidv.s3-website.eu-central-1.amazonaws.com) 
+S3 (shouldn't work): http://deploymentstack-awsshopreactd2879717-96gjl3admpkt.s3-website.eu-central-1.amazonaws.com
 
 ## Commands
 
