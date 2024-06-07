@@ -1,3 +1,16 @@
+# Task 2
+
+## Links
+CloudFront (should work): [https://dn09fj8ftxbnp.cloudfront.net](https://dn09fj8ftxbnp.cloudfront.net)
+
+S3 (shouldn't work): [http://deploymentstack-awsshopreactd2879717-zr88ij02pidv.s3-website.eu-central-1.amazonaws.com](http://deploymentstack-awsshopreactd2879717-zr88ij02pidv.s3-website.eu-central-1.amazonaws.com) 
+
+## Commands
+
+`npm run deploy` – build and deploy app to AWS
+
+`npm run destroy` – remove all used AWS resources
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
