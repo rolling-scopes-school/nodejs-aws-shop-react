@@ -6,10 +6,10 @@ import software.amazon.awscdk.CfnOutput;
 import software.amazon.awscdk.RemovalPolicy;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
-import software.amazon.awscdk.services.cloudfront.Behavior;
-import software.amazon.awscdk.services.cloudfront.CloudFrontWebDistribution;
-import software.amazon.awscdk.services.cloudfront.S3OriginConfig;
-import software.amazon.awscdk.services.cloudfront.SourceConfiguration;
+import software.amazon.awscdk.services.cloudfront.*;
+import software.amazon.awscdk.services.iam.CanonicalUserPrincipal;
+import software.amazon.awscdk.services.iam.Effect;
+import software.amazon.awscdk.services.iam.PolicyStatement;
 import software.amazon.awscdk.services.s3.BlockPublicAccess;
 import software.amazon.awscdk.services.s3.Bucket;
 import software.amazon.awscdk.services.s3.deployment.BucketDeployment;
@@ -29,6 +29,9 @@ public class S3StaticSiteCdkJavaStack extends Stack {
     public static final String CLOUD_FRONT_DISTRIBUTION_ID = "CloudFront Distribution Id";
     public static final String BUCKET = "Bucket";
     public static final String BUCKET_NAME = "Bucket Name";
+    public static final String MY_SHOP_STATIC_SITE_OAI = "MyShopStaticSiteOAI";
+    public static final String S_3_GET_OBJECT = "s3:GetObject";
+    public static final String ALL_RESOURCES = "/*";
 
     public S3StaticSiteCdkJavaStack(@Nullable Construct scope, @Nullable String id) {
         super(scope, id, null);
@@ -45,12 +48,17 @@ public class S3StaticSiteCdkJavaStack extends Stack {
                 .value(siteBucket.getBucketName())
                 .build();
 
+        var oai = createOriginAccessIdentity();
+
         // CloudFrontWebDistribution distribution
-        var distribution = createCloudFrontWebDistribution(siteBucket);
+        var distribution = createCloudFrontWebDistribution(siteBucket, oai);
         CfnOutput.Builder.create(this, DISTRIBUTION_ID)
                 .description(CLOUD_FRONT_DISTRIBUTION_ID)
                 .value(distribution.getDistributionId())
                 .build();
+
+        // Add a bucket policy to allow CloudFront to access the S3 bucket
+        addBucketPolicy(siteBucket, oai);
 
         deploySiteContents(siteBucket, siteContentsPath, distribution);
     }
@@ -65,6 +73,15 @@ public class S3StaticSiteCdkJavaStack extends Stack {
                 .build();
     }
 
+    private static void addBucketPolicy(Bucket siteBucket, OriginAccessIdentity oai) {
+        siteBucket.addToResourcePolicy(PolicyStatement.Builder.create()
+                .actions(List.of(S_3_GET_OBJECT))
+                .resources(List.of(siteBucket.getBucketArn() + ALL_RESOURCES))
+                .principals(List.of(new CanonicalUserPrincipal(oai.getCloudFrontOriginAccessIdentityS3CanonicalUserId())))
+                .effect(Effect.ALLOW)
+                .build());
+    }
+
     private @NotNull Bucket createSiteS3Bucket(boolean enablePublicReadAccess) {
         return Bucket.Builder.create(this, S3_BUCKET_NAME)
                 .bucketName(S3_BUCKET_NAME)
@@ -77,16 +94,25 @@ public class S3StaticSiteCdkJavaStack extends Stack {
                 .build();
     }
 
-    private @NotNull CloudFrontWebDistribution createCloudFrontWebDistribution(Bucket siteBucket) {
+    private @NotNull CloudFrontWebDistribution createCloudFrontWebDistribution(Bucket siteBucket, OriginAccessIdentity oai) {
+
         var sourceConfigurationsList = List.of(
                 SourceConfiguration.builder()
-                        .s3OriginSource(S3OriginConfig.builder().s3BucketSource(siteBucket).build())
+                        .s3OriginSource(
+                                S3OriginConfig.builder().s3BucketSource(siteBucket).originAccessIdentity(oai).build()
+                        )
                         .behaviors(List.of(Behavior.builder().isDefaultBehavior(true).build()))
                         .build()
         );
 
         return CloudFrontWebDistribution.Builder.create(this, SITE_DISTRIBUTION)
                 .originConfigs(sourceConfigurationsList)
+                .build();
+    }
+
+    private @NotNull OriginAccessIdentity createOriginAccessIdentity() {
+        return OriginAccessIdentity.Builder.create(this, MY_SHOP_STATIC_SITE_OAI)
+                .comment(MY_SHOP_STATIC_SITE_OAI)
                 .build();
     }
 
