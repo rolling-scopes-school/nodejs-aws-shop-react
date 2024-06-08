@@ -36,3 +36,14 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## Task 2
+### Manual deploy
+S3 with public access - https://task-2-public.s3.eu-north-1.amazonaws.com/index.html
+
+CloudFront - https://d1mgcuiw0j09cf.cloudfront.net
+S3 that above CloudFront is using (Restricted direct access) - https://rsschool.s3.eu-north-1.amazonaws.com/index.html
+
+### CDK deploy
+S3 - https://cdkjavastack-rsmodule2bucket9e5d6dd3-vuevhxcvpnge.s3.amazonaws.com/index.html
+CloudFront - https://d2zt3xe06mzv8f.cloudfront.net
