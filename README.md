@@ -37,13 +37,20 @@ Runs tests in console, in browser or with coverage.
 
 Runs linting and formatting for all files in `src` folder.
 
-## For deployment:
+## To start:
+
+- Install dependencies:
+## npm i
+
+- Build the project:
+## npm run build
+
+- ## For deployment:
 
 First go to cdk folder 
 ### `cd ./cdk`
 
 then run deploy 
-
 ### `delploy`
 
 
