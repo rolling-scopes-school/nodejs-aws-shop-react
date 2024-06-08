@@ -40,10 +40,10 @@ Runs linting and formatting for all files in `src` folder.
 ## To start:
 
 - Install dependencies:
-## npm i
+## `npm i`
 
 - Build the project:
-## npm run build
+## `npm run build`
 
 - ## For deployment:
 
@@ -51,7 +51,7 @@ First go to cdk folder
 ### `cd ./cdk`
 
 then run deploy 
-### `delploy`
+### `npm run delploy`
 
 
 ### URLs to website:
