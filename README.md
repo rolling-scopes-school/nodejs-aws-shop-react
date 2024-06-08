@@ -1,5 +1,9 @@
 # React-shop-cloudfront
 
+## Deploy:
+S3: https://maria-velesiuk-task2.s3.eu-west-1.amazonaws.com/index.html
+CloudFront: https://d3mexycw1tho3q.cloudfront.net
+
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
@@ -24,6 +28,14 @@ Starts the project in dev mode with mocked API on local environment.
 ### `build`
 
 Builds the project for production in `dist` folder.
+
+### `deploy`
+
+Builds the project for production in `dist` folder and uploads to your S3 bucket, and invalidate CloudFront cache from your machine
+
+### `destroy`
+
+Delete AWS CDK stacks from your AWS environment
 
 ### `preview`
 
