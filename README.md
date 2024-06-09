@@ -1,3 +1,10 @@
+You can access the content via the following links:
+S3  -  http://volia-task2-bucket.s3-website-us-east-1.amazonaws.com/
+CloudFront  - https://d2s2j8ibzo2f3m.cloudfront.net/
+
+Note that the site is with invalidation.
+
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
