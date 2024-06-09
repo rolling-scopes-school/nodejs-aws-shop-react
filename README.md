@@ -1,3 +1,18 @@
+# !!!!!!!!!!!!!!!
+# TASK-2.1 Manual Deployment
+- ### S3 URL(Blocked) - https://task-1-rs.s3.eu-central-1.amazonaws.com/index.html
+- ### CloudFront URL - https://dbk4hrf7n35us.cloudfront.net
+
+# TASK-2.2 Automated Deployment
+- ### S3 URL(Blocked) - https://my-rs-bucket-ttt.s3.eu-central-1.amazonaws.com/index.html
+- ### CloudFront URL - https://d2rv8rvax2fpqy.cloudfront.net
+
+
+### `npm run deploy` - for deploying
+
+# !!!!!!!!!!!!!!!
+
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
