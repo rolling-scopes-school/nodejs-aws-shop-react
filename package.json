@@ -11,7 +11,7 @@
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
-    "cdk:deploy": "npm run build && cd aws_cdk && cdk deploy",
+    "cdk:deploy": "npm run build && cd aws_cdk && cdk synth && cdk deploy",
     "cdk:destroy": "cd aws_cdk && cdk destroy"
   },
   "dependencies": {
