@@ -44,7 +44,7 @@ Runs linting and formatting for all files in `src` folder.
 + Forked the React Shop single-page app from https://github.com/rolling-scopes-school/nodejs-aws-shop-react.
 + Installed dependencies (need to use npm i --force).
 
-[Architecture] (Architecture.pdf)
+[Architecture](https://github.com/Tati-Moon/nodejs-aws-shop-react/blob/feature/task2/Architecture.pdf)
 
 # Task 2.1
 ## Manual Deployment
