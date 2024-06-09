@@ -36,3 +36,13 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## Links to AWS
+
+### `S3`
+
+https://cdkjsstack-rsmodule2mariiaya469730c1-bbluqk5kjkhx.s3.us-east-1.amazonaws.com/
+
+### `CloudFront`
+
+https://d11c10x0giirvl.cloudfront.net/
