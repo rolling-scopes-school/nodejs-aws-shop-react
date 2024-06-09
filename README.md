@@ -2,6 +2,10 @@
 
 AWS cloudfront task - to deploy frontend app to aws s3 using from aws cdk and cli
 
+## Store links
+ - CloudFront - [https://d3997ej4lkuf8l.cloudfront.net/](https://d3997ej4lkuf8l.cloudfront.net/)
+ - S3 - [http://sadullo-aws-2-spa.s3-website.eu-north-1.amazonaws.com/](http://sadullo-aws-2-spa.s3-website.eu-north-1.amazonaws.com/)
+
 ## Available Scripts
 
 ### `cdk deploy`
