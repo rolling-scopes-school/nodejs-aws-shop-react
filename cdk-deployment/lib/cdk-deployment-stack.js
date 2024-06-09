@@ -16,10 +16,10 @@ class CdkDeploymentStack extends Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
 
-    const cloudfrontOAI = new cloudFront.OriginAccessIdentity(this, 'rs-aws-cloud-developer-task-2-sa-OAI');
+    const cloudfrontOAI = new cloudFront.OriginAccessIdentity(this, 'sa-rs-aws-cloud-developer-task-2-OAI');
 
-    const siteBucket = new s3.Bucket(this, 'rs-aws-cloud-developer-task-2-sa', {
-      bucketName: 'rs-aws-cloud-developer-task-2-sa-s3',
+    const siteBucket = new s3.Bucket(this, 'sa-rs-aws-cloud-developer-task-2', {
+      bucketName: 'sa-rs-aws-cloud-developer-task-2-s3',
       websiteIndexDocument: 'index.html',
       publicReadAccess: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
@@ -32,7 +32,7 @@ class CdkDeploymentStack extends Stack {
       }),
     );
 
-    const distribution = new cloudFront.CloudFrontWebDistribution(this, 'rs-aws-cloud-developer-task-2-cloudfront-distribution-sa', {
+    const distribution = new cloudFront.CloudFrontWebDistribution(this, 'sa-rs-aws-cloud-developer-task-2-cloudfront-distribution', {
       originConfigs: [{
         s3OriginSource: {
           s3BucketSource: siteBucket,
@@ -44,7 +44,7 @@ class CdkDeploymentStack extends Stack {
       }],
     });
 
-    new s3Deployment.BucketDeployment(this, 'rs-aws-cloud-developer-task-2-bucket-deployment-sa', {
+    new s3Deployment.BucketDeployment(this, 'sa-rs-aws-cloud-developer-task-2-bucket-deployment', {
       sources: [s3Deployment.Source.asset('../dist')],
       destinationBucket: siteBucket,
       distribution,
