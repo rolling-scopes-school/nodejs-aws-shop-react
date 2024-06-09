@@ -39,5 +39,26 @@ export class CdkAppStack extends cdk.Stack {
         ],
       }),
     );
+
+    // create CloudFront distribution
+    const distribution = new aws_cloudfront.CloudFrontWebDistribution(
+      this,
+      "CloudFrontDistribution",
+      {
+        originConfigs: [
+          {
+            s3OriginSource: {
+              s3BucketSource: bucket,
+              originAccessIdentity: OAI,
+            },
+            behaviors: [
+              {
+                isDefaultBehavior: true,
+              },
+            ],
+          },
+        ],
+      },
+    );
   }
 }
