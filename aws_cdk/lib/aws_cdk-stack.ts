@@ -17,6 +17,7 @@ export class AwsCdkStack extends cdk.Stack {
      *     "accountId": "1234567890",
      *   }
      * }
-     **/ new Task02(this, "StaticSite");
+     **/
+    new Task02(this, "StaticSite");
   }
 }
