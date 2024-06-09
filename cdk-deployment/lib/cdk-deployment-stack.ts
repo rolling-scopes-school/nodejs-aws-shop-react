@@ -47,5 +47,13 @@ export class CdkDeploymentStack extends cdk.Stack {
       distribution,
       distributionPaths: ["/*"], // Invalidate the cache for all files
     });
+
+    new cdk.CfnOutput(this, "BucketUrl", {
+      value: bucket.bucketWebsiteUrl,
+    });
+
+    new cdk.CfnOutput(this, "DistributionDomainName", {
+      value: distribution.distributionDomainName,
+    });
   }
 }
