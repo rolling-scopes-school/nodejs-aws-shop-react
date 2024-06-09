@@ -1,16 +1,25 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as cdk from "aws-cdk-lib";
+import {
+  aws_s3,
+  aws_s3_deployment,
+  aws_iam,
+  aws_cloudfront,
+} from "aws-cdk-lib";
+import { Construct } from "constructs";
 
 export class CdkAppStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkAppQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    // create a new bucket
+    const bucket = new aws_s3.Bucket(this, "MyNewTask2Bucket", {
+      bucketName: "my-newtask2-bucket",
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+      versioned: false,
+      blockPublicAccess: cdk.aws_s3.BlockPublicAccess.BLOCK_ALL,
+      publicReadAccess: false,
+      websiteIndexDocument: "index.html",
+    });
   }
 }
