@@ -10,7 +10,7 @@
 ## Task 2.2. 40 points Done
 
 #### S3 bucket: https://rs-aws-cloud-developer-task-2-la-s3.s3.eu-central-1.amazonaws.com/index.html
-#### CloudFront: 
+#### CloudFront: https://d29wggx04pesfp.cloudfront.net
 
 ## Task 2.3 Done
 
