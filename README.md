@@ -50,10 +50,10 @@ Runs linting and formatting for all files in `src` folder.
 ## Manual Deployment
 
 1) In the AWS Console, created and configured an S3 bucket
-[S3 bucket](https://shop-web-app.s3.eu-central-1.amazonaws.com/index.html/)
+[S3 bucket](https://shop-web-app.s3.eu-central-1.amazonaws.com/index.html/)  - Expected behavior: status code 403
 
 2) Created a CloudFront distribution for app 
-[Cloud Front](https://d2zyxqnb5qq3f8.cloudfront.net/)
+[Cloud Front](https://d2zyxqnb5qq3f8.cloudfront.net/) - Expected behavior: available
 
 3) AWS CLI commands:
 ```sh
@@ -171,7 +171,7 @@ internal CdkStack(Construct scope, string id, IStackProps props = null) : base(s
     "deploy": "npm run build && npm run cdk-deploy"
     }
 7) Result of operation  'cdk deploy --all'
-[Settings] (img.png)
+([Settings](https://github.com/Tati-Moon/nodejs-aws-shop-react/blob/feature/task2/img.png)
 8) Checked links:
-a. [S3 bucket link](http://shop-web-app-automated.s3-website.eu-central-1.amazonaws.com/) - the 403 error should be shown
-b. [Cloud Front link](https://dfmqzjmg0ul9o.cloudfront.net/) - should be available.
+- [S3 bucket link](http://shop-web-app-automated.s3-website.eu-central-1.amazonaws.com/) - Expected behavior: 403 error
+- [CloudFront link](https://dfmqzjmg0ul9o.cloudfront.net/) - Expected behavior: available
