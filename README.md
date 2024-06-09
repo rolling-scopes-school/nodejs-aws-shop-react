@@ -1,5 +1,28 @@
 # React-shop-cloudfront
 
+
+## Task 2.1. 30 points Done
+
+#### S3 bucket: https://task-2-nodejs-aws-shop-react-la2.s3.eu-central-1.amazonaws.com/index.html
+#### CloudFront: https://d15i4rkskrmwoo.cloudfront.net
+
+
+## Task 2.2. 40 points Done
+
+#### S3 bucket: https://rs-aws-cloud-developer-task-2-la-s3.s3.eu-central-1.amazonaws.com/index.html
+#### CloudFront: https://d29wggx04pesfp.cloudfront.net
+
+## Task 2.3 Done
+
+#### Readme added
+
+## Additional (optional) tasks. 30 points. Done
+
+Run `npm run deployment`
+
+
+## Total points: 100
+
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
