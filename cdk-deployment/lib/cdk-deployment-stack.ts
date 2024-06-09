@@ -2,6 +2,7 @@ import * as cdk from "aws-cdk-lib";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
 import { Construct } from "constructs";
+import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class CdkDeploymentStack extends cdk.Stack {
@@ -29,9 +30,20 @@ export class CdkDeploymentStack extends cdk.Stack {
       sources: [s3deploy.Source.asset("../dist")],
       destinationBucket: bucket,
     });
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkDeploymentQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+
+    const distribution = new cloudfront.CloudFrontWebDistribution(
+      this,
+      "MyShopDistribution",
+      {
+        originConfigs: [
+          {
+            s3OriginSource: {
+              s3BucketSource: bucket,
+            },
+            behaviors: [{ isDefaultBehavior: true }],
+          },
+        ],
+      }
+    );
   }
 }
