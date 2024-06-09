@@ -26,11 +26,6 @@ export class CdkDeploymentStack extends cdk.Stack {
       },
     });
 
-    new s3deploy.BucketDeployment(this, "DeployWebsite", {
-      sources: [s3deploy.Source.asset("../dist")],
-      destinationBucket: bucket,
-    });
-
     const distribution = new cloudfront.CloudFrontWebDistribution(
       this,
       "MyShopDistribution",
@@ -45,5 +40,12 @@ export class CdkDeploymentStack extends cdk.Stack {
         ],
       }
     );
+
+    new s3deploy.BucketDeployment(this, "DeployWebsite", {
+      sources: [s3deploy.Source.asset("../dist")],
+      destinationBucket: bucket,
+      distribution,
+      distributionPaths: ["/*"], // Invalidate the cache for all files
+    });
   }
 }
