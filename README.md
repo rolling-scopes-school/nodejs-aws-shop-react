@@ -173,5 +173,5 @@ internal CdkStack(Construct scope, string id, IStackProps props = null) : base(s
 7) Result of operation  'cdk deploy --all'
 [Settings] (img.png)
 8) Checked links:
-[S3 bucket link](http://shop-web-app-automated.s3-website.eu-central-1.amazonaws.com/) - the 403 error should be shown
-[Cloud Front link](https://dfmqzjmg0ul9o.cloudfront.net/) - should be available.
+a. [S3 bucket link](http://shop-web-app-automated.s3-website.eu-central-1.amazonaws.com/) - the 403 error should be shown
+b. [Cloud Front link](https://dfmqzjmg0ul9o.cloudfront.net/) - should be available.
