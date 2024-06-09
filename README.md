@@ -36,3 +36,14 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## Links to manual deployment tasks
+
+Bucket url (403 Error): http://ibrs-nodejs-aws-shop-react.s3-website-eu-west-1.amazonaws.com
+
+Cloudfront: https://d2wqye20qrb6w6.cloudfront.net
+
+## Links from automated deploayment
+
+CdkDeploymentStack.BucketUrl = http://nodejs-aws-shop-react-cdk-2.s3-website-eu-west-1.amazonaws.com
+CdkDeploymentStack.DistributionDomainName = d2p14xw272yilp.cloudfront.net
