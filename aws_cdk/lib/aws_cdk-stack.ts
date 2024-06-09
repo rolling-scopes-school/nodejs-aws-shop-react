@@ -1,20 +1,22 @@
 import * as cdk from "aws-cdk-lib";
-import { aws_s3 as s3 } from "aws-cdk-lib";
 import { Construct } from "constructs";
-// import { Stack, StackProps, RemovalPolicy } from "aws-cdk-lib/";
-import { Bucket } from "aws-cdk-lib/aws-s3";
-import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
+import { Task02 } from "../construct/task02";
 
 export class AwsCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const myBucket = new Bucket(this, "MyBucket", {
-      versioned: true,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
-      autoDeleteObjects: true,
-      publicReadAccess: false,
-      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-    });
+    /**
+     * This stack relies on getting the domain name from CDK context.
+     * Use 'cdk synth -c domain=mystaticsite.com -c subdomain=www'
+     * Or add the following to cdk.json:
+     * {
+     *   "context": {
+     *     "domain": "mystaticsite.com",
+     *     "subdomain": "www",
+     *     "accountId": "1234567890",
+     *   }
+     * }
+     **/ new Task02(this, "StaticSite");
   }
 }
