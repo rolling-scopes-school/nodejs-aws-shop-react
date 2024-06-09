@@ -1,5 +1,5 @@
-Task 2.1 links:
+Task links:
 
-[link to S3 Bucket](http://my-task2-bucket.s3-website-eu-west-1.amazonaws.com/)
+[link to CloudFront](https://d2qp8zxts8bks.cloudfront.net/)
 
-[link to CloudFront](https://d1ayvo9yb0479z.cloudfront.net/)
+[link to S3 Bucket (403 - Access denied)](http://my-task2-bucket.s3-website-eu-west-1.amazonaws.com/)
