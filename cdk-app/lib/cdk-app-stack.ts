@@ -21,5 +21,23 @@ export class CdkAppStack extends cdk.Stack {
       publicReadAccess: false,
       websiteIndexDocument: "index.html",
     });
+
+    // create policy for bucket
+    const OAI = new aws_cloudfront.OriginAccessIdentity(this, "MyNewTask2OAI", {
+      comment: "MyNewTask2OAI",
+    });
+
+    // add policy
+    bucket.addToResourcePolicy(
+      new aws_iam.PolicyStatement({
+        resources: [bucket.bucketArn],
+        actions: ["s3:GetObject"],
+        principals: [
+          new cdk.aws_iam.CanonicalUserPrincipal(
+            OAI.cloudFrontOriginAccessIdentityS3CanonicalUserId,
+          ),
+        ],
+      }),
+    );
   }
 }
