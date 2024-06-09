@@ -10,7 +10,9 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "deploy": "npm run build && cd cdk && cdk deploy",
+    "destroy": "cd cdk && cdk destroy -f"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
