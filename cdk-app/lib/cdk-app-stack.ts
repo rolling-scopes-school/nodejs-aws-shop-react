@@ -1,23 +1,25 @@
-import * as cdk from "aws-cdk-lib";
 import {
   aws_s3,
   aws_s3_deployment,
   aws_iam,
   aws_cloudfront,
+  RemovalPolicy,
+  Stack,
+  StackProps,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
-export class CdkAppStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+export class CdkAppStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // create a new bucket
     const bucket = new aws_s3.Bucket(this, "MyNewTask2Bucket", {
       bucketName: "my-newtask2-bucket",
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
       versioned: false,
-      blockPublicAccess: cdk.aws_s3.BlockPublicAccess.BLOCK_ALL,
+      blockPublicAccess: aws_s3.BlockPublicAccess.BLOCK_ALL,
       publicReadAccess: false,
       websiteIndexDocument: "index.html",
     });
@@ -33,11 +35,11 @@ export class CdkAppStack extends cdk.Stack {
         resources: [bucket.bucketArn],
         actions: ["s3:GetObject"],
         principals: [
-          new cdk.aws_iam.CanonicalUserPrincipal(
-            OAI.cloudFrontOriginAccessIdentityS3CanonicalUserId,
+          new aws_iam.CanonicalUserPrincipal(
+            OAI.cloudFrontOriginAccessIdentityS3CanonicalUserId
           ),
         ],
-      }),
+      })
     );
 
     // create CloudFront distribution
@@ -58,7 +60,15 @@ export class CdkAppStack extends cdk.Stack {
             ],
           },
         ],
-      },
+      }
     );
+
+    // deploy
+    new aws_s3_deployment.BucketDeployment(this, "MyDeployment", {
+      sources: [aws_s3_deployment.Source.asset("../dist")],
+      destinationBucket: bucket,
+      distribution: distribution,
+      distributionPaths: ["/*"],
+    });
   }
 }
