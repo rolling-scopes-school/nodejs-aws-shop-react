@@ -24,7 +24,7 @@ export class CdkAppStack extends Stack {
       websiteIndexDocument: "index.html",
     });
 
-    // create policy for bucket
+    // create OAI
     const OAI = new aws_cloudfront.OriginAccessIdentity(this, "MyNewTask2OAI", {
       comment: "MyNewTask2OAI",
     });
