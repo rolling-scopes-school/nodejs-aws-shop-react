@@ -5,6 +5,8 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
+    "deploy": "npm run build && cd cdk-app && cdk deploy",
+    "destroy": "cd cdk-app && cdk destroy -f",
     "preview": "npm run build && vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
