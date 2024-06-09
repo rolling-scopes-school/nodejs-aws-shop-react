@@ -20,6 +20,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "bin", "lib", "cdk-s3-deployment.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
