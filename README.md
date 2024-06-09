@@ -1,3 +1,7 @@
+# Task
+CloudFront URL: https://d354mt9pm76xdl.cloudfront.net/
+S3 Bucket URL: http://rs-spa.s3-website.eu-central-1.amazonaws.com
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
