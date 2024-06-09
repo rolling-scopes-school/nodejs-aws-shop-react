@@ -6,6 +6,8 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "npm run build && vite preview",
+    "cdk:deploy": "npm run build && cd ./cdk-deploy && cdk deploy --require-approval never",
+    "cdk:destroy": "cd ./cdk-deploy && cdk destroy -f",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",

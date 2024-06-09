@@ -2,3 +2,5 @@ node_modules
 public
 vite.config.ts
 serverless.yml
+cdk-deploy-stack.ts
+cdk-deploy.ts
