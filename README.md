@@ -37,6 +37,18 @@ Runs tests in console, in browser or with coverage.
 
 Runs linting and formatting for all files in `src` folder.
 
+## What was done?
+
+### Manual Deployment: 
+- S3 bucket has been created and uploaded to the bucket and is available though the Internet.
+- CloudFront distribution is created and he site is served now with CloudFront and is available through the Internet over CloudFront URL.
+
+### Automated Deployment:
+- S3 bucket creation, website deployment, CloudFront Distribution and Invalidation added and configured by using AWS CDK. [Link](https://github.com/Hakimbek/nodejs-aws-shop-react/blob/aws-2-serving-spa/cdk-deployment/cdk_deployment/cdk_deployment_stack.py) to stack file which is responsible for auto deploy.
+
+## Link to FE PR
+You can find links to CloudFront and S3-website [here](https://github.com/Hakimbek/nodejs-aws-shop-react/tree/aws-2-serving-spa), in my forked repo.
+
 ## URL
 
 CloudFront URL: https://dbckq8zyvfoi3.cloudfront.net
