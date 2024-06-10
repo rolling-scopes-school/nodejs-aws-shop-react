@@ -1,6 +1,6 @@
-# React-shop-cloudfront
+# My-Store-App
 
-This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
+This is the frontend starter project for the Node.js AWS mentoring program. It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
 - [React](https://beta.reactjs.org/) as a frontend framework
@@ -19,20 +19,49 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 
 ### `start`
 
-Starts the project in dev mode with mocked API on local environment.
+Starts the project in dev mode with mocked API on the local environment.
 
 ### `build`
 
-Builds the project for production in `dist` folder.
+Builds the project for production in the `dist` folder.
 
 ### `preview`
 
-Starts the project in production mode on local environment.
+Starts the project in production mode on the local environment.
 
-### `test`, `test:ui`, `test:coverage`
+### `cdk:deploy`
 
-Runs tests in console, in browser or with coverage.
+Builds the project and deploys it using AWS CDK.
 
-### `lint`, `prettier`
+### `cdk:destroy`
 
-Runs linting and formatting for all files in `src` folder.
+Destroys the AWS CDK deployment.
+
+### `test`
+
+Runs tests in the console.
+
+### `test:ui`
+
+Runs tests in a browser UI.
+
+### `test:coverage`
+
+Runs tests with coverage.
+
+### `lint`
+
+Runs linting for all files in the `src` folder.
+
+### `prettier`
+
+Formats all files in the `src` folder.
+
+## AWS CDK Deployment
+
+### Bootstrapping the Environment
+
+Before deploying the project using AWS CDK, you need to bootstrap the environment. This step sets up the necessary resources that AWS CDK requires. Run the following command:
+
+```bash
+cdk bootstrap aws://590183744920/eu-central-1
