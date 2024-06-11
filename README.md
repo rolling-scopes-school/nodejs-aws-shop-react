@@ -44,3 +44,7 @@ Add and configure S3 bucket creation and website deployment using AWS CDK and Cl
 ### `npm run destroy`
 
 CloudFront Invalidation using AWS CDK
+
+[Link to S3 bucket website](http://liza-aws-react-web-app-bucket.s3-website.eu-central-1.amazonaws.com/)
+
+[Link to CloudFront website](https://dvtolf4nt67kd.cloudfront.net)
