@@ -8,6 +8,7 @@ AWS cloudfront task - to deploy frontend app to aws s3 using from aws cdk and cl
 
 ## Task 2.2 | Automated deployment:
  - CloudFront - [https://d25exxr5jznejq.cloudfront.net/](https://d25exxr5jznejq.cloudfront.net/)
+ - S3-website - [http://cdkawsshopstack-deploymentfrontendbucket67ceb713-e4n0dqivcuxv.s3.eu-north-1.amazonaws.com/](http://cdkawsshopstack-deploymentfrontendbucket67ceb713-e4n0dqivcuxv.s3.eu-north-1.amazonaws.com/)
 
 ## Available Scripts
 
