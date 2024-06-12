@@ -1,13 +1,13 @@
 import { Construct } from "constructs";
 import {
-  aws_s3 as s3,
-  aws_iam as iam,
   aws_cloudfront as cloudfront,
+  aws_iam as iam,
+  aws_s3 as s3,
   aws_s3_deployment as s3deploy,
+  RemovalPolicy,
   Stack,
   StackProps,
 } from "aws-cdk-lib";
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class AwsCdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -26,6 +26,8 @@ export class AwsCdkStack extends Stack {
       websiteIndexDocument: "index.html",
       publicReadAccess: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     siteBucket.addToResourcePolicy(
