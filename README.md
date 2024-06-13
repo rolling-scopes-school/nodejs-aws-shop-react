@@ -1,6 +1,6 @@
 You can access the content via the following links:
 S3  -  http://volia-task2-bucket.s3-website-us-east-1.amazonaws.com/
-CloudFront  - https://d2s2j8ibzo2f3m.cloudfront.net/
+CloudFront  - d21hvg5oqzabr.cloudfront.net
 
 Note that the site is with invalidation.
 
