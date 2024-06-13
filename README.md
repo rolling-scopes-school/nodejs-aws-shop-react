@@ -36,3 +36,6 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+task1.1 https://d1bwom5gl0riaw.cloudfront.net
+task1.2 https://rs-task-2.s3.eu-north-1.amazonaws.com/index.html
