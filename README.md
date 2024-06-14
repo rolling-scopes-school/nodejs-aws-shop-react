@@ -15,6 +15,12 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 - [Prettier](https://prettier.io/) as a code formatting tool
 - [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
+## Site Links
+
+- [S3-website](https://avorakh-cdk-nodejs-aws-shop-react.s3.eu-north-1.amazonaws.com/index.html) - FORBIDDEN DUO TO BUCKET POLICY
+- [CloudFront URL](https://d1042f2eyyzqju.cloudfront.net) - available
+
+
 ## Available Scripts
 
 ### `start`
@@ -36,3 +42,12 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `cdk:build`, `cdk:deploy`
+
+Runs AWS CDK build and deploy
+
+### `build-and-deploy`
+
+Builds the project for production in `dist` folder and deploy to AWS infrastructure 
+(S3 bucket creation, website deployment, CloudFront Distribution and Invalidation).
