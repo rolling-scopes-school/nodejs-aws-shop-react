@@ -1,3 +1,7 @@
+# CloudFront link
+
+[link](https://d2h2800aqlu3y5.cloudfront.net/)
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
@@ -16,6 +20,10 @@ This is frontend starter project for nodejs-aws mentoring program. It uses the f
 - [TypeScript](https://www.typescriptlang.org/) as a type checking tool
 
 ## Available Scripts
+
+### `deploy`
+
+Deploys the project to AWS CloudFront and invalidates the cache.
 
 ### `start`
 

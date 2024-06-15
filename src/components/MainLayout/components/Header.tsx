@@ -7,11 +7,13 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import Cart from "~/components/MainLayout/components/Cart";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
+import CloudIcon from "@mui/icons-material/Cloud";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
   const open = Boolean(anchorEl);
   const auth = true;
 
@@ -23,9 +25,22 @@ export default function Header() {
     setAnchorEl(null);
   };
 
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
   return (
-    <AppBar position="relative">
+    <AppBar position="relative" color="secondary">
       <Toolbar>
+        <div onClick={handleLogoClick}>
+          <CloudIcon
+            sx={{
+              display: { xs: "none", md: "flex" },
+              mr: 1,
+              cursor: "pointer",
+            }}
+          />
+        </div>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <Link
             component={RouterLink}
@@ -33,7 +48,7 @@ export default function Header() {
             underline="none"
             to="/"
           >
-            My Store!
+            AWS course
           </Link>
         </Typography>
 
