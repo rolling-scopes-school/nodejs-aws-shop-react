@@ -7,12 +7,14 @@ This is frontend starter project for nodejs-aws mentoring program.
 **2.1 Manual Deployment**
 
 S3 static website: http://rsschool-cloud-developer-module-2.s3-website.eu-central-1.amazonaws.com/
+
 Cloudfront URL: https://d2tr10e3tph8ps.cloudfront.net/
 
 **2.2 Automated Deployment**
 
-S3 static website (shows 403 Access Denied error): http://rss-shop-spa-bucket.s3-website.eu-central-1.amazonaws.com/
-Cloudfront URL: https://d9m0gfxtvrnq5.cloudfront.net/
+S3 static website (shows 403 Access Denied error): http://lobovskiy-nodejs-aws-shop-react-bucket.s3-website.eu-central-1.amazonaws.com/
+
+Cloudfront URL: https://d1qidy1lgd5su8.cloudfront.net/
 
 ## Technologies
 

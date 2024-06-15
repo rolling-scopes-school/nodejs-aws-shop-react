@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node -P tsconfig.cdk.json --prefer-ts-exts cdk-s3-deployment.ts",
+  "app": "npx ts-node -P tsconfig.cdk.json --prefer-ts-exts bin/cdk.ts",
   "watch": {
     "include": ["cdk-s3-deployment.ts"],
     "exclude": [
