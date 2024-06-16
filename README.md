@@ -38,6 +38,7 @@ Runs tests in console, in browser or with coverage.
 Runs linting and formatting for all files in `src` folder.
 
 # Task 2 (Serve SPA in AWS S3 and Cloudfront Services)
+https://github.com/rolling-scopes-school/aws/blob/main/aws-developer/02_serving_spa/task.md
 
 + Installed the latest version of AWS CDK (https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html).
 + Configured credentials for AWS to make them accessible for AWS CLI & CDK.
@@ -88,7 +89,8 @@ Used [AWS CDK](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-construct-library
  (
     delete options: 
     * `aws cloudformation describe-stacks`
-    * `aws cloudformation delete-stack --stack-name CdkStackLayerStack_NAMES`
+    * `aws cloudformation delete-stack --stack-name CdkStack --region eu-central-1`
+    * `aws cloudformation delete-stack --stack-name CdkStack --retain-resources shopwebappbucket4BE87B22`
     * `aws cloudformation delete-stack --stack-name CDKToolkit`
     * `npm uninstall -g aws-cdk`
 )
@@ -165,6 +167,7 @@ internal CdkStack(Construct scope, string id, IStackProps props = null) : base(s
 * `cdk deploy`       deploy this stack to your default AWS account/region
 * `cdk diff`         compare deployed stack with current state
 * `cdk synth`        emits the synthesized CloudFormation template
+* `aws cloudfront create-invalidation --distribution-id E2850DB97YRJMB --paths "/*"`
 6) Added options to package.json:
    "scripts": {
     "cdk-deploy": "cdk deploy --app \"cdk_dest/cdk.out\"",
@@ -175,3 +178,33 @@ internal CdkStack(Construct scope, string id, IStackProps props = null) : base(s
 8) Checked links:
 [S3 bucket link](http://shop-web-app-automated.s3-website.eu-central-1.amazonaws.com/) - the 403 error should be shown
 [Cloud Front link](https://dfmqzjmg0ul9o.cloudfront.net/) - should be available.
+
+
+# Task 3
+
+Task: https://github.com/rolling-scopes-school/aws/blob/main/aws-developer/03_serverless_api/task.md
+
+### What was done?
+- Created two Lambda functions: `getProductsList` and `getProductsById`.
+- Integrated these functions with API Gateway.
+- Added CORS support.
+- Created Swagger documentation.
+- Added unit tests for Lambda functions.
+
+### Additional scope
+- Swagger documentation: added `openapi.yaml` file.
+- Unit tests: created tests for `getProductsList` and `getProductsById`.
+- Code is separated into different modules for better maintainability.
+
+### How to run Swagger locally?
+
+1. Ensure you have the necessary dependencies installed:
+   * `npm install swagger-ui-express yamljs express --legacy-peer-deps`
+2. Run the Swagger server:
+   * `npm run start-swagger`
+
+### Links
+- [Product Service API](https://1nsh7fxo91.execute-api.us-east-1.amazonaws.com/prod/products)
+- [Product Service API for id = 1](https://1nsh7fxo91.execute-api.us-east-1.amazonaws.com/prod/products/1)
+- [Frontend PR](https://d21a3jmx00scyq.cloudfront.net)
+- [Swagger](http://localhost:3000/api-docs)
