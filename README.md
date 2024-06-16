@@ -1,4 +1,11 @@
 # React-shop-cloudfront
+2.1 Manual links
+CloudFront URL: https://dcgbfyhv30bjl.cloudfront.net
+S3-website: http://awsdeveloper2024q2-rsschool-task2.1.s3-website-eu-west-1.amazonaws.com/
+
+2.2 Auto-created links
+CloudFront URL: https://dpgo2bvb22hsa.cloudfront.net/
+S3-website: http://awsdeveloper2024q2-rsschool-task2.2.s3-website-eu-west-1.amazonaws.com
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 

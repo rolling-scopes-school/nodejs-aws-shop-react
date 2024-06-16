@@ -10,7 +10,12 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "postinstall": "cd cdk-deployment && npm install",
+    "delete-stack": "aws cloudformation delete-stack --stack-name CDKToolkit",
+    "cdk:bootstrap": "cd cdk-deployment && npm run cdk bootstrap",
+    "cdk:deploy": "cd cdk-deployment && npm run cdk deploy --require-approval=never",
+    "cdk:destroy": "cd cdk-deployment && npm run cdk destroy && npm run delete-stack"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
