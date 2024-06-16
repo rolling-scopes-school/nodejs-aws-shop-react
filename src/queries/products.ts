@@ -9,7 +9,8 @@ export function useAvailableProducts() {
     "available-products",
     async () => {
       const res = await axios.get<AvailableProduct[]>(
-        `${API_PATHS.bff}/product/available`
+        // `${API_PATHS.bff}/product/available`
+        "https://5ua826jntg.execute-api.us-west-2.amazonaws.com/prod/products"
       );
       return res.data;
     }
