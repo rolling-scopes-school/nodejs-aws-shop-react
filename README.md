@@ -4,13 +4,13 @@ This is frontend starter project for nodejs-aws mentoring program.
 
 ## Deployment
 
-Cloudfront URL: https://d1253iq9i8ynf5.cloudfront.net/
+Cloudfront URL: https://d1253iq9i8ynf5.cloudfront.net
 
 ## Service APIs
 
 Repository: https://github.com/lobovskiy/nodejs-aws-shop-services
 
-Products Service: https://u78sd3hrsc.execute-api.eu-central-1.amazonaws.com/products
+Products Service: https://od2fzpzaa0.execute-api.eu-central-1.amazonaws.com/dev/products
 
 ## Technologies
 

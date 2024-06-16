@@ -15,7 +15,7 @@
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
     "cdk:bootstrap": "npm run build && cdk bootstrap",
-    "cdk:deploy": "cdk deploy",
+    "cdk:deploy": "npm run build && cdk deploy",
     "cdk:destroy": "cdk destroy"
   },
   "dependencies": {
