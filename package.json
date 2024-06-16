@@ -6,6 +6,8 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "npm run build && vite preview",
+    "deploy": "npm run build && cd cdk-python && python3 -m venv .venv && source .venv/bin/activate && cdk deploy",
+    "destroy": "cd cdk-python && python3 -m venv .venv && source .venv/bin/activate && cdk destroy -f",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",

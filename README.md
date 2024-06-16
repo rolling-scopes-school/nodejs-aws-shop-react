@@ -36,3 +36,12 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## Links to manual deployed app
+
+Link to S3: http://tea-jar-store.s3-website-eu-west-1.amazonaws.com/
+Link to CloudFront: https://d1jdy7bt5tsjh4.cloudfront.net/
+
+## Links to automated deployed app
+
+Link to CloudFront: https://d3jtdncy0kvip7.cloudfront.net
