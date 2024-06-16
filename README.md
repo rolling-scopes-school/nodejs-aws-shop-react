@@ -53,20 +53,7 @@ First go to cdk folder
 then run deploy 
 ### `npm run delploy`
 
-
-### URLs to website:
-
-### Task 2.1 Manual Deployment
-
-#### S3 bucket website: 
-
-https://my-shop-react-bucket.s3.eu-west-1.amazonaws.com/index.html
-
-#### CloudFront website: 
-
-https://d18qk7dy2mngew.cloudfront.net/
-
-### Task 2.2 Automated Deployment
+## Automated Deployment
 
 #### CloudFront website: 
 
