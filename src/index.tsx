@@ -14,27 +14,19 @@ const queryClient = new QueryClient({
   },
 });
 
-(async () => {
-  // until server is created
-  if (true) {
-    const { worker } = await import("./mocks/browser");
-    worker.start({ onUnhandledRequest: "bypass" });
-  }
-
-  const container = document.getElementById("app");
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const root = createRoot(container!);
-  root.render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <App />
-          </ThemeProvider>
-          <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
-      </BrowserRouter>
-    </React.StrictMode>
-  );
-})();
+const container = document.getElementById("app");
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const root = createRoot(container!);
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);

@@ -4,15 +4,31 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import { formatAsPrice } from "~/utils/utils";
 import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
 import { useAvailableProducts } from "~/queries/products";
+
+const defaultImg =
+  "https://w7.pngwing.com/pngs/558/892/png-transparent-smartphone-phone-screen-template-element-thumbnail.png";
 
 export default function Products() {
   const { data = [], isLoading } = useAvailableProducts();
 
   if (isLoading) {
-    return <Typography>Loading...</Typography>;
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "70vh",
+        }}
+      >
+        <CircularProgress size={100} />
+      </Box>
+    );
   }
 
   return (
@@ -25,7 +41,7 @@ export default function Products() {
           >
             <CardMedia
               sx={{ pt: "56.25%" }}
-              image={`https://source.unsplash.com/random?sig=${index}`}
+              image={product.imgUrl ?? defaultImg}
               title="Image title"
             />
             <CardContent sx={{ flexGrow: 1 }}>
