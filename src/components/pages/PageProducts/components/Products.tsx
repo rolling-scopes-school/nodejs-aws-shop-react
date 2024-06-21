@@ -49,6 +49,9 @@ export default function Products() {
             </CardContent>
             <CardActions>
               <AddProductToCart product={product} />
+              <Typography>
+                Available in stock:&nbsp;<strong>{count}</strong>
+              </Typography>
             </CardActions>
           </Card>
         </Grid>
