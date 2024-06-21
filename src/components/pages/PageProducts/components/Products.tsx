@@ -10,9 +10,6 @@ import { formatAsPrice } from "~/utils/utils";
 import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
 import { useAvailableProducts } from "~/queries/products";
 
-const defaultImg =
-  "https://w7.pngwing.com/pngs/558/892/png-transparent-smartphone-phone-screen-template-element-thumbnail.png";
-
 export default function Products() {
   const { data = [], isLoading } = useAvailableProducts();
 
@@ -41,7 +38,7 @@ export default function Products() {
           >
             <CardMedia
               sx={{ pt: "56.25%" }}
-              image={product.imgUrl ?? defaultImg}
+              image={`https://picsum.photos/386/217?random=${product.id}`}
               title="Image title"
             />
             <CardContent sx={{ flexGrow: 1 }}>
