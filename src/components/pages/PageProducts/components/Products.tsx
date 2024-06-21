@@ -27,8 +27,12 @@ export default function Products() {
               sx={{ height: "100%", display: "flex", flexDirection: "column" }}
             >
               <CardMedia
-                sx={{ pt: "56.25%" }}
-                image={img?.source}
+                sx={{
+                  pt: "66.25%",
+                  objectFit: "contain",
+                  objectPosition: "center",
+                }}
+                image={img?.source || "images/logo.jpg"}
                 title="Image title"
               />
               <CardContent sx={{ flexGrow: 1 }}>
