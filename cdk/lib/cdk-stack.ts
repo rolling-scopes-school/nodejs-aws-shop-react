@@ -49,6 +49,20 @@ export class CdkStack extends Stack {
             ],
           },
         ],
+        errorConfigurations: [
+          {
+            errorCode: 403,
+            responsePagePath: "/index.html",
+            responseCode: 200,
+            errorCachingMinTtl: 300,
+          },
+          {
+            errorCode: 404,
+            responsePagePath: "/index.html",
+            responseCode: 200,
+            errorCachingMinTtl: 300,
+          },
+        ],
       }
     );
 
