@@ -1,4 +1,4 @@
-# React-shop-cloudfront
+# Math Squad Shop FE
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
