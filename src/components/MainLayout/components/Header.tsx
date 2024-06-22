@@ -9,6 +9,7 @@ import Menu from "@mui/material/Menu";
 import Cart from "~/components/MainLayout/components/Cart";
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@mui/material/Link";
+import { CardMedia } from "@mui/material";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -26,15 +27,33 @@ export default function Header() {
   return (
     <AppBar position="relative">
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h6"
+          sx={{
+            display: "flex",
+            flexGrow: 1,
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
           <Link
             component={RouterLink}
-            sx={{ color: "inherit" }}
+            sx={{ color: "white" }}
             underline="none"
             to="/"
           >
-            My Store!
+            <CardMedia
+              sx={{
+                height: "50px",
+                width: "55px",
+                objectFit: "contain",
+                objectPosition: "center",
+              }}
+              image="images/logo.jpg"
+              title="Image title"
+            />
           </Link>
+          <div>T-shirt shop</div>
         </Typography>
 
         {auth && (

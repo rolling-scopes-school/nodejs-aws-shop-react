@@ -1,0 +1,38 @@
+[
+    {
+        "product_id": "6f496fde-1c28-4319-ae01-5678e7996694",
+        "source": "images/tshirt-1.jpg"
+    },
+    {
+        "product_id": "4029c669-17f4-4865-836b-c491c0fab322",
+        "source": "images/tshirt-2.jpg"
+    },
+    {
+        "product_id": "89cb59b3-7340-4c36-bcd5-7c7d127d4663",
+        "source": "images/tshirt-3.jpg"
+    },
+    {
+        "product_id": "d11a3cd4-a1cd-45f1-8224-136d31163c88",
+        "source": "images/tshirt-4.jpg"
+    },
+    {
+        "product_id": "26c2e12e-8419-46a7-90ae-728efc5f9e11",
+        "source": "images/tshirt-5.jpg"
+    },
+    {
+        "product_id": "3d38e204-94c6-4a9e-a390-2617b6f74399",
+        "source": "images/tshirt-6.jpg"
+    },
+    {
+        "product_id": "f874e8e7-5c2b-4ee9-b791-55e58b99c9fc",
+        "source": "images/tshirt-7.jpg"
+    },
+    {
+        "product_id": "089e62d9-a5c3-450f-bffb-5898df92951f",
+        "source": "images/tshirt-8.jpg"
+    },
+    {
+        "product_id": "216d4237-a61d-4c3b-a6a8-e856a897d7b9",
+        "source": "images/tshirt-9.jpg"
+    }
+]

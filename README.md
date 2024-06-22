@@ -1,4 +1,4 @@
-# React-shop-cloudfront
+# Math Squad Shop FE
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
@@ -36,3 +36,25 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## To start:
+
+- Install dependencies:
+## `npm i`
+
+- Build the project:
+## `npm run build`
+
+- ## For deployment:
+
+First go to cdk folder 
+### `cd ./cdk`
+
+then run deploy 
+### `npm run delploy`
+
+## Automated Deployment
+
+#### CloudFront website: 
+
+https://d3r5s5dc64z7tm.cloudfront.net
