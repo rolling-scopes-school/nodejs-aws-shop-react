@@ -37,6 +37,7 @@ export default function Products() {
             <CardActions>
               <AddProductToCart product={product} />
             </CardActions>
+            count: {count}
           </Card>
         </Grid>
       ))}
