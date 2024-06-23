@@ -17,7 +17,6 @@ export default function Products() {
 
   return (
     <Grid container spacing={4}>
-      hello task 2 - s3, cloud front - cdk deploy
       {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
       {data.map(({ count, ...product }, index) => (
         <Grid item key={product.id} xs={12} sm={6} md={4}>
@@ -38,6 +37,7 @@ export default function Products() {
             <CardActions>
               <AddProductToCart product={product} />
             </CardActions>
+            count: {count}
           </Card>
         </Grid>
       ))}
