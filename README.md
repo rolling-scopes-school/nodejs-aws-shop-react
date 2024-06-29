@@ -12,6 +12,8 @@ Repository: https://github.com/lobovskiy/nodejs-aws-shop-services
 
 Products Service: https://od2fzpzaa0.execute-api.eu-central-1.amazonaws.com/dev/products
 
+Import Service: https://nsr51h1em5.execute-api.eu-central-1.amazonaws.com/dev/import
+
 ## Technologies
 
 The project uses the following technologies:
