@@ -30,7 +30,6 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       return;
     }
 
-    // Get the presigned URL
     const response = await axios({
       method: "GET",
       url,
