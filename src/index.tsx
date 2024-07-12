@@ -7,12 +7,48 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { theme } from "~/theme";
+import axios, { AxiosError } from "axios";
+import { LS_KEYS } from "./constants/localStorage";
+
+axios.interceptors.response.use(undefined, (err) => {
+  const error = err as AxiosError;
+  const { response } = error;
+  let message;
+
+  if (
+    response?.data &&
+    response.data instanceof Object &&
+    Object.hasOwn(response.data, "message")
+  ) {
+    const data = response.data as { message: unknown };
+    message = data.message;
+  }
+
+  if (response?.status === 401 || response?.status === 403) {
+    alert(
+      `Authorization failed: ${[response.status, message]
+        .filter(Boolean)
+        .join(" - ")}`
+    );
+  }
+
+  return error;
+});
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: { refetchOnWindowFocus: false, retry: false, staleTime: Infinity },
   },
 });
+
+const authToken = localStorage.getItem(LS_KEYS.AuthToken) ?? "";
+
+if (!authToken) {
+  localStorage.setItem(
+    LS_KEYS.AuthToken,
+    window.btoa("lobovskiy:TEST_PASSWORD")
+  );
+}
 
 if (import.meta.env.DEV) {
   const { worker } = await import("./mocks/browser");
