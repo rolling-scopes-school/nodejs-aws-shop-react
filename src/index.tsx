@@ -20,6 +20,11 @@ axios.interceptors.response.use(
   }
 );
 
+localStorage.setItem(
+  "authorization_token",
+  "ZWxpemF2ZXRhcmF6dW1lbmtvPVRFU1RfUEFTU1dPUkQ="
+);
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: { refetchOnWindowFocus: false, retry: false, staleTime: Infinity },
