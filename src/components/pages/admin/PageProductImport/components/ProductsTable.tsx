@@ -19,6 +19,11 @@ export default function ProductsTable() {
   const { mutate: deleteAvailableProduct } = useDeleteAvailableProduct();
   const invalidateAvailableProducts = useInvalidateAvailableProducts();
 
+  localStorage.setItem(
+    "authorization_token",
+    "ZWxpemF2ZXRhcmF6dW1lbmtvPVRFU1RfUEFTU1dPUkQ="
+  );
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
