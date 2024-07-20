@@ -1,3 +1,3 @@
 export const LS_KEYS = {
-  AuthToken: "authToken",
+  AuthToken: "authorization_token",
 };
