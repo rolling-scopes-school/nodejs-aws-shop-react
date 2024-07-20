@@ -30,6 +30,7 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
+    "react-toastify": "^10.0.5",
     "yup": "^0.32.11"
   },
   "devDependencies": {
