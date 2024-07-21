@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import API_PATHS from "~/constants/apiPaths";
 import ProductsTable from "~/components/pages/admin/PageProductImport/components/ProductsTable";
 import CSVFileImport from "~/components/pages/admin/PageProductImport/components/CSVFileImport";
@@ -6,6 +7,13 @@ import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 
 export default function PageProductImport() {
+  useEffect(() => {
+    localStorage.setItem(
+      "authorization_token",
+      btoa(`IharTsykala:TEST_PASSWORD`)
+    );
+  }, []);
+
   return (
     <Box py={3}>
       <Box mb={2} display="flex" justifyContent="space-between">
