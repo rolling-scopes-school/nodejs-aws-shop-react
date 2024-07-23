@@ -79,7 +79,7 @@ export default function PageOrder() {
       <Typography component="h1" variant="h4" align="center">
         Manage order
       </Typography>
-      <ReviewOrder address={order.address} items={cartItems} />
+      <ReviewOrder address={order.delivery} items={cartItems} />
       <Typography variant="h6">Status:</Typography>
       <Typography variant="h6" color="primary">
         {lastStatusItem?.status.toUpperCase()}

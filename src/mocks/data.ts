@@ -70,29 +70,33 @@ export const cart: CartItem[] = [
 export const orders: Order[] = [
   {
     id: "1",
-    address: {
+    delivery: {
       address: "some address",
       firstName: "Name",
       lastName: "Surname",
       comment: "",
     },
-    items: [
-      { productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa", count: 2 },
-      { productId: "7567ec4b-b10c-45c5-9345-fc73c48a80a1", count: 5 },
-    ],
     statusHistory: [
       { status: OrderStatus.Open, timestamp: Date.now(), comment: "New order" },
     ],
+    items: [],
+    cart: {
+      items: [
+        { productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa", count: 2 },
+        { productId: "7567ec4b-b10c-45c5-9345-fc73c48a80a1", count: 5 },
+      ],
+    },
+    status: "OPEN",
   },
   {
     id: "2",
-    address: {
+    delivery: {
       address: "another address",
       firstName: "John",
       lastName: "Doe",
       comment: "Ship fast!",
     },
-    items: [{ productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa", count: 3 }],
+    items: [],
     statusHistory: [
       {
         status: OrderStatus.Sent,
@@ -100,5 +104,9 @@ export const orders: Order[] = [
         comment: "Fancy order",
       },
     ],
+    cart: {
+      items: [{ productId: "7567ec4b-b10c-48c5-9345-fc73c48a80aa", count: 3 }],
+    },
+    status: "OPEN",
   },
 ];
