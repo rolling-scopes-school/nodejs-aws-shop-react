@@ -7,18 +7,24 @@ import { Cart } from "~/models/Cart";
 import { Order } from "~/models/Order";
 
 export function useCart() {
-  return useQuery<CartItem[], AxiosError>("cart", async () => {
-    const res = await axios.get<{ data: { cart: Cart; total: number } }>(
-      `${API_PATHS.cart}/profile/cart`,
-      {
-        headers: {
-          Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
-        },
-      }
-    );
+  return useQuery<CartItem[], AxiosError>(
+    "cart",
+    async () => {
+      const res = await axios.get<{ data: { cart: Cart; total: number } }>(
+        `${API_PATHS.cart}/profile/cart`,
+        {
+          headers: {
+            Authorization: `Basic ${localStorage.getItem(
+              "authorization_token"
+            )}`,
+          },
+        }
+      );
 
-    return res.data.data.cart.items;
-  });
+      return res.data.data.cart.items;
+    },
+    { staleTime: 0 }
+  );
 }
 
 export function useCartData() {
