@@ -5,6 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { CartItem } from "~/models/CartItem";
 import { formatAsPrice } from "~/utils/utils";
 import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
+import { useAvailableProducts } from "~/queries/products";
 
 type CartItemsProps = {
   items: CartItem[];
@@ -12,15 +13,28 @@ type CartItemsProps = {
 };
 
 export default function CartItems({ items, isEditable }: CartItemsProps) {
-  const totalPrice: number = items.reduce(
-    (total, item) => item.count * item.product.price + total,
-    0
-  );
+  const { data: products = [], isLoading } = useAvailableProducts();
+  const totalPrice: number = items.reduce((total, item) => {
+    if (!item.price) return total;
+    return total + item.price * item.count;
+  }, 0);
+  const productIds = items.map((item) => item.product_id);
+
+  const cartItems: CartItem[] = products
+    .filter((product) => productIds.includes(product.id))
+    .map((product) => ({
+      product,
+      count: product.count,
+    }));
+
+  if (isLoading) {
+    return <Typography>Loading...</Typography>;
+  }
 
   return (
     <>
       <List disablePadding>
-        {items.map((cartItem: CartItem) => (
+        {cartItems.map((cartItem: CartItem) => (
           <ListItem
             sx={{ padding: (theme) => theme.spacing(1, 0) }}
             key={cartItem.product.id}

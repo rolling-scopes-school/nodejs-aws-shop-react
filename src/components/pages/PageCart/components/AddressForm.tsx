@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Formik, Form, Field } from "formik";
 import TextField from "~/components/Form/TextField";
-import { Address, AddressSchema } from "~/models/Order";
+import { Address, DeliverySchema } from "~/models/Order";
 
 type AddressFormProps = {
   initialValues: Address;
@@ -16,7 +16,7 @@ const AddressForm = ({ initialValues, onBack, onSubmit }: AddressFormProps) => {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={AddressSchema}
+      validationSchema={DeliverySchema}
       validateOnMount={true}
       onSubmit={onSubmit}
     >
