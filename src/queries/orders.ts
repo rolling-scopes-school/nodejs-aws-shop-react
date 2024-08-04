@@ -35,11 +35,25 @@ export function useUpdateOrderStatus() {
 
 export function useSubmitOrder() {
   return useMutation((values: Omit<Order, "id">) => {
-    return axios.put<Omit<Order, "id">>(`${API_PATHS.order}/order`, values, {
-      headers: {
-        Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+    const body = {
+      payment: {
+        type: "default",
       },
-    });
+      delivery: {
+        type: "default",
+        address: values.address.address,
+      },
+      comments: values.address.comment,
+    };
+    return axios.post<Omit<Order, "id">>(
+      `${API_PATHS.order}/profile/cart/checkout`,
+      body,
+      {
+        headers: {
+          Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
+        },
+      }
+    );
   });
 }
 

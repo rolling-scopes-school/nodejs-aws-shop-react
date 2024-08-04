@@ -10,6 +10,7 @@ import { useAvailableProducts } from "~/queries/products";
 
 export default function Products() {
   const { data = [], isLoading } = useAvailableProducts();
+  localStorage.setItem("availableProducts", JSON.stringify(data));
 
   if (isLoading) {
     return <Typography>Loading...</Typography>;
