@@ -36,7 +36,7 @@ export function useUpdateOrderStatus() {
 export function useSubmitOrder() {
   return useMutation((values: Omit<Order, "id">) => {
     return axios.put<Omit<Order, "id">>(
-      `${API_PATHS.order}/profile/cart/checkout`,
+      `${API_PATHS.bff}/cart/api/profile/cart/checkout`,
       values,
       {
         headers: {
