@@ -10,7 +10,9 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "deploy": "npm run build && npm run deploy:cdk",
+    "deploy:cdk": "npx cdk deploy --profile admin_aws_sso_profile_name"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -19,12 +21,14 @@
     "@mui/material": "^5.8.7",
     "@mui/styles": "^5.8.7",
     "@types/yup": "^0.29.14",
+    "aws-cdk-lib": "^2.162.1",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
+    "ts-node": "^10.9.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
