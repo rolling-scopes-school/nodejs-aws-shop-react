@@ -36,3 +36,9 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+Task #2:
+
+- [v] Service is done. Manual deployment evaluation
+- [v] Additional scope - webpack, swagger, unit tests
+- [v] AWS CDK deployment evaluation
