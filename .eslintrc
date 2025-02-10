@@ -11,6 +11,67 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/naming-convention": [
+        "warn",
+        {
+            "selector": "function",
+            "format": ["PascalCase", "camelCase", "snake_case"]
+        }
+    ],
+    "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { "prefer": "type-imports", "disallowTypeAnnotations": true }
+    ],
+
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/function-component-definition": [
+        "error",
+        { "namedComponents": "function-declaration", "unnamedComponents": "arrow-function" }
+    ],
+
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "import/no-duplicates": "off",
+    "import/extensions": [
+        "error",
+        "ignorePackages",
+        { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }
+    ],
+
+    "class-methods-use-this": "off",
+    "newline-per-chained-call": "error",
+    "object-curly-spacing": ["error", "always"],
+
+    "comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+
+    "no-console": "off",
+    "no-else-return": "error",
+    "no-useless-return": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+
+    "consistent-return": "off",
+    "prefer-destructuring": "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  },
   "plugins": ["@typescript-eslint", "react", "prettier"],
   "env": {
     "browser": true,
