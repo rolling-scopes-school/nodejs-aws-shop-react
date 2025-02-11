@@ -36,3 +36,27 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+## Manual deployment:
+
+# What has been done:
+
+- [x] S3 bucket creation using AWS console
+- [x] Implemented CloudFront using AWS console
+
+# Links:
+
+- CloudFront URL: [https://dg06vhysa30um.cloudfront.net/]
+- S3 Website URL: [https://nodejs-aws-shop-react-alekz7.s3.us-east-1.amazonaws.com/index.html]
+
+## AWS CDK deployment:
+
+# What has been done:
+
+- [x] S3 bucket creation via CDK
+- [x] Implemented CloudFront via CDK
+
+# Links:
+
+- CloudFront URL: [https://d379vxlnmbat7a.cloudfront.net/]
+- S3 Website URL: [https://frontenddeploymentstack-websitebucket75c24d94-vxmyyqxqa3bt.s3.us-east-1.amazonaws.com/index.html]
