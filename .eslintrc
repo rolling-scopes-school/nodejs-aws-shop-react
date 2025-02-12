@@ -81,5 +81,8 @@
     "react": {
       "version": "detect"
     }
+  },
+  "parserOptions": {
+    "project": "./infrastructure"
   }
 }
