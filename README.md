@@ -22,17 +22,6 @@ upload to your S3 bucket, and invalidate CloudFront cache from your machine in a
 ### Task 2.3:
 - Store the links to CloudFront URL and S3-website in README.md file.
   - [x] URL S3-website. - http://rs-app-test-1.s3-website-us-east-1.amazonaws.com/
-       ```json
-      {
-        "Sid": "2",
-        "Effect": "Allow",
-        "Principal": {
-          "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E2QLVDBM74QGU6"
-        },
-        "Action": "s3:GetObject",
-        "Resource": "arn:aws:s3:::rs-app-test-1/*"
-      }
-      ```
   - [x] URL CloudFront - https://d2xksn4h3reedh.cloudfront.net/
 - [x] Commit all your work to separate branch (e.g. task-2 from the latest main) in your own repository.
 
