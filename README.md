@@ -1,3 +1,41 @@
+
+
+### Task 2.1 (Manual Deployment)
+- [x] In the AWS Console create and configure an S3 bucket where you will host your app.
+  - bucket name: `rs-app-test-1`
+  - region: `us-east-1`
+- [x] Build and manually upload the MyShop.
+- [x] Create a CloudFront distribution for your app.
+- [x] Make some minor but visible changes in the app.
+  - Commented `import.meta.env.DEV` to render product list in production.
+### Task 2.2 (Automated Deployment)
+- [x] Add and configure S3 bucket creation and website deployment using AWS CDK. 
+- [x] Add necessary npm script(s) to build and deploy your app from your machine in an automated way.
+  - `yarn build` - Build application.
+  - `yarn deploy:s3` - separately upload **dist** folder to **S3**.
+- [x] Destroy the created AWS infrastructure (S3 bucket and CloudFront distribution) from the previous part and steps. 
+Make sure nothing is left.
+- [x] Add and configure CloudFront Distribution and Invalidation using AWS CDK. Add necessary npm script(s) to build, 
+upload to your S3 bucket, and invalidate CloudFront cache from your machine in an automated way.
+  - `yarn deploy:cf` - separately **CloudFront** invalidation.
+  - `yarn deploy` Build application. Completely upload **dist** folder to **S3**. **CloudFront** invalidation.
+### Task 2.3:
+- Store the links to CloudFront URL and S3-website in README.md file.
+  - [x] URL S3-website. - http://rs-app-test-1.s3-website-us-east-1.amazonaws.com/
+       ```json
+      {
+        "Sid": "2",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E2QLVDBM74QGU6"
+        },
+        "Action": "s3:GetObject",
+        "Resource": "arn:aws:s3:::rs-app-test-1/*"
+      }
+      ```
+  - [x] URL CloudFront - https://d2xksn4h3reedh.cloudfront.net/
+- [x] Commit all your work to separate branch (e.g. task-2 from the latest main) in your own repository.
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
