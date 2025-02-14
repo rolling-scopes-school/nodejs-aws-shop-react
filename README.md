@@ -43,6 +43,6 @@ I created bucket. There I store files from 'dist' directory,
 also there was modified permissions with access only from CloudFront.
 At the moment only CloudFront hosts website and only via HTTPS.
 
-CloudFront URL https://d2iql40qlimn43.cloudfront.net/
+CloudFront URL https://d29k3ev6jxlq31.cloudfront.net
 
 S3 bucket link with 403 http://krasnopolskyi-nodejs-aws-shop-react.s3-website.eu-north-1.amazonaws.com
