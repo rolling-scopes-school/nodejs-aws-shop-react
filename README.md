@@ -1,45 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React-shop-cloudfront
 
-## Available Scripts
+## Task 2 - Serving SPA
 
-In the project directory, you can run:  
-You can use NPM instead of YARN (Up to you)  
+URL of instructions: https://github.com/rolling-scopes-school/aws/blob/main/aws-developer/02_serving_spa/task.md
 
-### `yarn start` OR `npm run start`
+What has been done:
+  - [x] Manual Bucket + CloudFront creation: done
+  - [x] Automatic Bucket + CloudFront creation: done
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Manual creation
+- Bucket URL (Access Denied): https://nodejs-aws-shop-react-tds.s3.eu-west-3.amazonaws.com/
+- CloudFront URL: https://djy4jsds0nb88.cloudfront.net/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Automatic creation (using CDK)
+- Bucket URL (Access Denied, see "infrastructure/lib/infrastructure-stack.ts") : https://webappstack-jsccstaticbucket131261f3-sipylym7kxvi.s3.eu-west-3.amazonaws.com/
+- CloudFront URL: https://d1ef84ecychojy.cloudfront.net
 
-### `yarn test` OR `npm run test`
+Here are screenshots of what I did.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Buckets configuration
 
-### `yarn build` OR `npm run build`
+![Buckets configuration](tasks/task_2/1_s3_buckets.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Cloudfront configuration
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Cloudfront configuration](tasks/task_2/2_cloudfront.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. CDK Bootstrap command line output
 
-### `yarn eject` OR `npm run eject`
+![CDK Bootstrap command line output](tasks/task_2/3_cdk_bootstrap.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. CDK Deploy command line output
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![CDK Deploy command line output](tasks/task_2/4_cdk_deploy.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Old README
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Vite](https://vitejs.dev/) as a project bundler
+- [React](https://beta.reactjs.org/) as a frontend framework
+- [React-router-dom](https://reactrouterdotcom.fly.dev/) as a routing library
+- [MUI](https://mui.com/) as a UI framework
+- [React-query](https://react-query-v3.tanstack.com/) as a data fetching library
+- [Formik](https://formik.org/) as a form library
+- [Yup](https://github.com/jquense/yup) as a validation schema
+- [Vitest](https://vitest.dev/) as a test runner
+- [MSW](https://mswjs.io/) as an API mocking library
+- [Eslint](https://eslint.org/) as a code linting tool
+- [Prettier](https://prettier.io/) as a code formatting tool
+- [TypeScript](https://www.typescriptlang.org/) as a type checking tool
+
+### Available Scripts
+
+#### `start`
+
+Starts the project in dev mode with mocked API on local environment.
+
+#### `build`
+
+Builds the project for production in `dist` folder.
+
+#### `preview`
+
+Starts the project in production mode on local environment.
+
+#### `test`, `test:ui`, `test:coverage`
+
+Runs tests in console, in browser or with coverage.
+
+#### `lint`, `prettier`
+
+Runs linting and formatting for all files in `src` folder.
