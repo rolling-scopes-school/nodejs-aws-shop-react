@@ -39,6 +39,9 @@ Runs linting and formatting for all files in `src` folder.
 
 
 ### Task links
+I created bucket. There I store files from 'dist' directory,
+also there was modified permissions with access only from CloudFront.
+At the moment only CloudFront hosts website and only via HTTPS.
 
 CloudFront URL https://d2iql40qlimn43.cloudfront.net/
 
