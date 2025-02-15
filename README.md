@@ -1,38 +1,34 @@
 # React-shop-cloudfront
 
-This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
+## Task 2 - Serving SPA
 
-- [Vite](https://vitejs.dev/) as a project bundler
-- [React](https://beta.reactjs.org/) as a frontend framework
-- [React-router-dom](https://reactrouterdotcom.fly.dev/) as a routing library
-- [MUI](https://mui.com/) as a UI framework
-- [React-query](https://react-query-v3.tanstack.com/) as a data fetching library
-- [Formik](https://formik.org/) as a form library
-- [Yup](https://github.com/jquense/yup) as a validation schema
-- [Vitest](https://vitest.dev/) as a test runner
-- [MSW](https://mswjs.io/) as an API mocking library
-- [Eslint](https://eslint.org/) as a code linting tool
-- [Prettier](https://prettier.io/) as a code formatting tool
-- [TypeScript](https://www.typescriptlang.org/) as a type checking tool
+URL of instructions: https://github.com/rolling-scopes-school/aws/blob/main/aws-developer/02_serving_spa/task.md
 
-## Available Scripts
+What has been done:
+  - [x] Manual Bucket and CloudFront creation is done
+  - [x] Automatic Bucket and CloudFront creation with deployment is done
 
-### `start`
+Manual creation
+- Bucket URL: https://aws-dev-2-1-shymanouski.s3.us-east-1.amazonaws.com
+- CloudFront URL: https://d3b3yy8orjdvoz.cloudfront.net
 
-Starts the project in dev mode with mocked API on local environment.
+Automatic creation (using CDK)
+- Bucket URL: http://aws-dev-2-2-shymanouski.s3.us-east-1.amazonaws.com
+- CloudFront URL: https://d2ysfb0ful54fo.cloudfront.net
 
-### `build`
+Additionally:
+- The display of product images was fixed according to the following advice of @SunSundr: https://discord.com/channels/1018779355155013693/1084767995341058128/1339524661175648278
 
-Builds the project for production in `dist` folder.
+Screenshots:
 
-### `preview`
+1. Buckets configuration
 
-Starts the project in production mode on local environment.
+![Buckets configuration](docs/s3.png)
 
-### `test`, `test:ui`, `test:coverage`
+2. Cloudfront configuration
 
-Runs tests in console, in browser or with coverage.
+![Cloudfront configuration](docs/cloudfront.png)
 
-### `lint`, `prettier`
+3. CDK Deploy command line output
 
-Runs linting and formatting for all files in `src` folder.
+![CDK Deploy command line output](docs/cloudfront.png)
