@@ -12,7 +12,7 @@
     "cdk-synth": "cdk synth",
     "cdk-deploy": "cdk deploy",
     "cdk-bootstrap": "cdk bootstrap",
-    "cdk-invalidate-cloudfront": "aws cloudfront create-invalidation --distribution-id E3BLJZ9A0XS06L --paths \"/*\""
+    "cdk-invalidate-cloudfront": "aws cloudfront create-invalidation --distribution-id E3DYIWX2KLDLIS --paths \"/*\""
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

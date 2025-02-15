@@ -11,7 +11,8 @@
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
-    "cdk-deploy": "npm install && npm run build && cd cdk && npm install && npm run cdk-bootstrap && npm run cdk-synth && npm run cdk-deploy && npm run cdk-invalidate-cloudfront"
+    "cdk-deploy": "npm install && npm run build && cd cdk && npm install && npm run cdk-bootstrap && npm run cdk-synth && npm run cdk-deploy && npm run cdk-invalidate-cloudfront",
+    "cdk-destroy-all": "cd cdk && cdk destroy --force && cdk bootstrap --destroy && cd .. && rm -rf cdk.out node_modules package-lock.json cdk/node_modules"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
