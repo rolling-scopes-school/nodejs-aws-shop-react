@@ -18,13 +18,18 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
     "@mui/styles": "^5.8.7",
+    "@types/node": "16.18.126",
     "@types/yup": "^0.29.14",
+    "aws-cdk-lib": "^2.178.2",
     "axios": "^0.27.2",
+    "dotenv": "^16.4.7",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {
