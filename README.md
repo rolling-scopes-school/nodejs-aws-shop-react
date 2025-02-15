@@ -41,8 +41,8 @@ Runs linting and formatting for all files in `src` folder.
 
 ## Deployed Application Links
 
-- **CloudFront URL:** [https://d34rwminoyx3xb.cloudfront.net/](https://d34rwminoyx3xb.cloudfront.net/)
-- **S3 Website URL:** [https://cdkstack-deploymentfrontendbucket67ceb713-elkbkg3ykp7t.s3.amazonaws.com/](https://cdkstack-deploymentfrontendbucket67ceb713-elkbkg3ykp7t.s3.amazonaws.com/) _(should return 403 Access Denied)_
+- **CloudFront URL:** [https://d3lu9acxdpz9hy.cloudfront.net/](https://d3lu9acxdpz9hy.cloudfront.net/)
+- **S3 Website URL:** [https://cdkstack-deploymentfrontendbucket67ceb713-xxcfkqtuefhd.s3.amazonaws.com/](https://cdkstack-deploymentfrontendbucket67ceb713-xxcfkqtuefhd.s3.amazonaws.com/) _(should return 403 Access Denied)_
 
 ## Deployment Steps
 
