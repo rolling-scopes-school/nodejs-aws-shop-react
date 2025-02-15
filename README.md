@@ -70,3 +70,7 @@ To deploy the application, run:
 ```sh
 npm run deploy
 ```
+
+```sh
+npm run destroy
+```
