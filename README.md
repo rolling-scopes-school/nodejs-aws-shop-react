@@ -31,4 +31,4 @@ Screenshots:
 
 3. CDK Deploy command line output
 
-![CDK Deploy command line output](docs/cloudfront.png)
+![CDK Deploy command line output](docs/deploy.png)
