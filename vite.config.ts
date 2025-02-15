@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: './cdk/src/dist',
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       onwarn(warning, warn) {
