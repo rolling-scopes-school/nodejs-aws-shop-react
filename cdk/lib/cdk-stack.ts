@@ -10,35 +10,21 @@ export class CdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // bucket
     const siteBucket = new s3.Bucket(this, "SiteBucket", {
       bucketName: `ivan-frolov-store-by-rsschool-${this.account}`,
       publicReadAccess: false,
       blockPublicAccess: new s3.BlockPublicAccess({
         blockPublicPolicy: false,
-        restrictPublicBuckets: true,
+        restrictPublicBuckets: false,
         blockPublicAcls: true,
         ignorePublicAcls: true,
       }),
       objectOwnership: s3.ObjectOwnership.BUCKET_OWNER_PREFERRED,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      websiteIndexDocument: "index.html",
+      autoDeleteObjects: true,
     });
 
-    // distribution
-    const distribution = new cloudfront.Distribution(this, "SiteDistribution", {
-      defaultBehavior: {
-        origin: new origins.S3StaticWebsiteOrigin(siteBucket),
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-      },
-      defaultRootObject: "index.html",
-    });
-
-    const bucketPolicy = new s3.BucketPolicy(this, "BucketPolicy", {
-      bucket: siteBucket,
-    });
-
-    bucketPolicy.document.addStatements(
+    siteBucket.addToResourcePolicy(
       new iam.PolicyStatement({
         actions: ["s3:GetObject"],
         resources: [`${siteBucket.bucketArn}/*`],
@@ -46,13 +32,33 @@ export class CdkStack extends cdk.Stack {
       })
     );
 
+    // distribution
+    const distribution = new cloudfront.Distribution(this, "SiteDistribution", {
+      defaultBehavior: {
+        origin: new origins.S3Origin(siteBucket),
+        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+      },
+      defaultRootObject: "index.html",
+      errorResponses: [
+        {
+          httpStatus: 404,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
+        },
+        {
+          httpStatus: 500,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
+        },
+      ],
+    });
+
     // deploy static files
     new s3deploy.BucketDeployment(this, "DeployWebsite", {
       sources: [s3deploy.Source.asset("../dist")],
       destinationBucket: siteBucket,
       distribution,
       distributionPaths: ["/*"],
-      accessControl: s3.BucketAccessControl.BUCKET_OWNER_FULL_CONTROL,
     });
 
     // Show url
