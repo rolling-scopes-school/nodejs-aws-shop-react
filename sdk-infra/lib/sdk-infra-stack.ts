@@ -1,7 +1,7 @@
 // lib/sdk-infra-stack.ts
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { Bucket, BucketAccessControl } from 'aws-cdk-lib/aws-s3';
+import { BlockPublicAccess, Bucket, BucketAccessControl } from 'aws-cdk-lib/aws-s3';
 import { Distribution } from 'aws-cdk-lib/aws-cloudfront';
 import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
@@ -14,7 +14,16 @@ export class SdkInfraStack extends Stack {
     // 1. Create S3 Bucket (disable public read - we use CloudFront)
     const websiteBucket = new Bucket(this, 'Task2Bucket', {
       websiteIndexDocument: 'index.html',
-      publicReadAccess: false, // Block public
+
+      publicReadAccess: true,
+
+      blockPublicAccess: new BlockPublicAccess({
+        blockPublicAcls: false,
+        ignorePublicAcls: false,
+        blockPublicPolicy: false,
+        restrictPublicBuckets: false,
+      }),
+      websiteErrorDocument: 'index.html',
     });
 
     // 2. CloudFront OAI (grants CF read access to bucket)
