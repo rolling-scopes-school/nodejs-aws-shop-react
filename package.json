@@ -13,7 +13,11 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "cdk": "cdk",
+    "deploy": "npm run build && npm run cdk-deploy && npm run invalidate-cache",
+    "cdk-deploy": "cdk deploy --require-approval never",
+    "invalidate-cache": "aws cloudfront create-invalidation --distribution-id E2WIJ6S5GSMRAL --paths \"/*\""
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
