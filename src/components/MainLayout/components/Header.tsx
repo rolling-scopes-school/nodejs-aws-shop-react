@@ -33,7 +33,7 @@ export default function Header() {
             underline="none"
             to="/"
           >
-            My Store!
+            Ivan Frolov Store by RSSchool
           </Link>
         </Typography>
 
