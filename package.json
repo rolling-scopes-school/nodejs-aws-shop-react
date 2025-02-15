@@ -11,7 +11,7 @@
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
-    "cdk-deploy": "npm install && npm run build && cd cdk && npm install && npm run cdk-bootstrap && npm run cdk-synth && npm run cdk-deploy"
+    "cdk-deploy": "npm install && npm run build && cd cdk && npm install && npm run cdk-bootstrap && npm run cdk-synth && npm run cdk-deploy && npm run cdk-invalidate-cloudfront"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
