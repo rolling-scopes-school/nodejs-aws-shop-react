@@ -10,16 +10,13 @@ export class CdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const oai = new cloudfront.OriginAccessIdentity(this, "cloudfrontOAI");
+
     const siteBucket = new s3.Bucket(this, "SiteBucket", {
       bucketName: `ivan-frolov-store-by-rsschool-${this.account}`,
+      websiteIndexDocument: "index.html",
       publicReadAccess: false,
-      blockPublicAccess: new s3.BlockPublicAccess({
-        blockPublicPolicy: false,
-        restrictPublicBuckets: false,
-        blockPublicAcls: true,
-        ignorePublicAcls: true,
-      }),
-      objectOwnership: s3.ObjectOwnership.BUCKET_OWNER_PREFERRED,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
     });
@@ -27,16 +24,21 @@ export class CdkStack extends cdk.Stack {
     siteBucket.addToResourcePolicy(
       new iam.PolicyStatement({
         actions: ["s3:GetObject"],
-        resources: [`${siteBucket.bucketArn}/*`],
-        principals: [new iam.AnyPrincipal()],
+        resources: [siteBucket.arnForObjects("*")],
+        principals: [
+          new iam.CanonicalUserPrincipal(
+            oai.cloudFrontOriginAccessIdentityS3CanonicalUserId
+          ),
+        ],
       })
     );
 
     // distribution
     const distribution = new cloudfront.Distribution(this, "SiteDistribution", {
       defaultBehavior: {
-        origin: new origins.S3Origin(siteBucket),
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        origin: origins.S3BucketOrigin.withOriginAccessIdentity(siteBucket, {
+          originAccessIdentity: oai,
+        }),
       },
       defaultRootObject: "index.html",
       errorResponses: [
