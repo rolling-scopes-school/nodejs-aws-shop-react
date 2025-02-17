@@ -1,5 +1,5 @@
 {
-  "app": "node bin/aws-deploy.js",
+  "app": "node bin/shop-web-app.js",
   "watch": {
     "include": [
       "**"
