@@ -1,3 +1,10 @@
+Task 2.1
+
+Bucket distribution link: https://nodejs-aws-shop-react-assets.s3.us-east-1.amazonaws.com/index.html
+CloudFront distribution Link: https://d2d5vepjqc7b20.cloudfront.net/
+
+
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
