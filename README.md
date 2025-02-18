@@ -1,7 +1,7 @@
 TASK 2.2
 
 Bucket Link - https://nodejs-aws-shop-react-assets-automated.s3.us-east-1.amazonaws.com/index.html
-CloudFront link - 
+CloudFront link - https://d23mwe2u0n2960.cloudfront.net
 
 
 
