@@ -1,3 +1,10 @@
+TASK 2.2
+
+Bucket Link - https://nodejs-aws-shop-react-assets-automated.s3.us-east-1.amazonaws.com/index.html
+CloudFront link - 
+
+
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
