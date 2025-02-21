@@ -1,3 +1,8 @@
+# Task-2 links
+
+- [S3] (https://mycdkappstack-xxxxxxxxxxxxxfcfd6cd5-y93z6en20oua.s3.eu-central-1.amazonaws.com/);
+- [CloudFront] (https://d26oqp4a70yux2.cloudfront.net/);
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
