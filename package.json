@@ -59,7 +59,7 @@
     "source-map-support": "^0.5.21",
     "tsx": "^4.19.2",
     "typescript": "^4.9.5",
-    "vite": "^2.9.13",
+    "vite": "6.0.9",
     "vitest": "^0.17.1"
   },
   "msw": {
