@@ -6,6 +6,6 @@ import { InfrastructureStack } from '../lib/infrastructure-stack';
 const app = new cdk.App();
 new InfrastructureStack(app, 'MyReactWebsiteStack', {
   env: {
-    region: 'us-east-1', // Choose your desired region
+    region: 'us-east-1',
   },
 });
