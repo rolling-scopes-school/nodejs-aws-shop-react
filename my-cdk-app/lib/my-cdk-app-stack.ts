@@ -9,7 +9,7 @@ export class MyCdkAppStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const websiteBucket = new s3.Bucket(this, 'XXXXXXXXXXXXX', {
+    const websiteBucket = new s3.Bucket(this, 'nodejs-aws-shop', {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
@@ -32,7 +32,7 @@ export class MyCdkAppStack extends cdk.Stack {
       ]
     });
 
-    new s3deploy.BucketDeployment(this, 'XXXXXXXXXXXXXXXXX', {
+    new s3deploy.BucketDeployment(this, 'deploy-nodejs-aws-shop', {
       sources: [s3deploy.Source.asset('../dist')],
       destinationBucket: websiteBucket,
       distribution,
