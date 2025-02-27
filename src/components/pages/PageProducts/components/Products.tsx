@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -25,7 +26,7 @@ export default function Products() {
           >
             <CardMedia
               sx={{ pt: "56.25%" }}
-              image={`https://source.unsplash.com/random?sig=${index}`}
+              image={`https://avtovektor.com.ua/assets/images/cap.jpg`}
               title="Image title"
             />
             <CardContent sx={{ flexGrow: 1 }}>
